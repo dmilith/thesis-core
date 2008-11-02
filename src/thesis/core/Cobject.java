@@ -3,30 +3,38 @@ package thesis.core;
 import java.util.Date;
 import java.util.UUID;
 
-public class Cobject { //extends Rdb4oBase {
+/*
+ * Cobject Class is main class for all objects in Thesis
+ */
+public class Cobject {
 
   public static final boolean debug = true;
 
+  /* unique identifier */
   private UUID uuid;
   /* parent it's uuid of object's parent */
   private UUID parent;
+  /* time of creation */
   private Date createdAt;
 
 
-  public Cobject() {
-      this.uuid = UUID.randomUUID();
+  public Cobject( boolean foo ) { // to get clean Cobject stub without UUID
   }
 
-  public Cobject( boolean foo ) { // to get clean Cobject without UUID
+  public Cobject() {
+      this.uuid = UUID.randomUUID();
+      this.createdAt = new Date();
   }
 
   public Cobject( UUID new_uuid ) {
       this.uuid = new_uuid;
+      this.createdAt = new Date();
   }
 
   public Cobject( UUID new_uuid, UUID new_parent ) {
       this.uuid = new_uuid;
       this.parent = new_parent;
+      this.createdAt = new Date();
   }
 
   public Cobject( UUID new_uuid, UUID new_parent, Date new_date ) {
@@ -37,11 +45,13 @@ public class Cobject { //extends Rdb4oBase {
 
   public Cobject( String new_uuid ) {
       this.uuid = UUID.fromString(new_uuid);
+      this.createdAt = new Date();
   }
 
   public Cobject( String new_uuid, String new_parent ) {
       this.uuid = UUID.fromString(new_uuid);
       this.parent = UUID.fromString(new_parent);
+      this.createdAt = new Date();
   }
 
   public Cobject( String new_uuid, String new_parent, Date new_date ) {
@@ -49,6 +59,7 @@ public class Cobject { //extends Rdb4oBase {
       this.parent = UUID.fromString(new_parent);
       this.createdAt = new_date;
   }
+
 
   public void setUUID(UUID new_uuid) {
       this.uuid = new_uuid;
