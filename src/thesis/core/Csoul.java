@@ -17,6 +17,7 @@ public class Csoul extends Cobject {
 
     public Csoul() {
         super();
+        this.setObjectType( Csoul.class );
         this.mana = 0;
         this.mindStrength = 0;
     }

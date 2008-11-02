@@ -17,7 +17,7 @@ public class Cobject {
   /* time of creation */
   private Date createdAt;
   /* type of object */
-  private Object objectType = Cobject.class;
+  private Object objectType;
 
   public void setObjectType(Object thisObject) {
       this.objectType = thisObject;
@@ -32,6 +32,7 @@ public class Cobject {
 
   public Cobject() {
       this.uuid = UUID.randomUUID();
+      this.setObjectType( Cobject.class );
       this.createdAt = new Date();
   }
 
