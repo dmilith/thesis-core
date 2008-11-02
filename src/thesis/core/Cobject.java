@@ -16,7 +16,16 @@ public class Cobject {
   private UUID parent;
   /* time of creation */
   private Date createdAt;
+  /* type of object */
+  private Object objectType = Cobject.class;
 
+  public void setObjectType(Object thisObject) {
+      this.objectType = thisObject;
+  }
+
+  public Object getObjectType() {
+      return this.objectType;
+  }
 
   public Cobject( boolean foo ) { // to get clean Cobject stub without UUID
   }
