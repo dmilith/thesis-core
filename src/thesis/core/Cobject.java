@@ -19,6 +19,58 @@ public class Cobject {
   /* type of object */
   private Object objectType;
 
+  public Cobject( boolean foo ) { // to get clean Cobject stub without UUID
+  }
+
+  public Cobject() {
+      this.uuid = UUID.randomUUID();
+      this.parent = null;
+      this.setObjectType( Cobject.class );
+      this.createdAt = new Date();
+  }
+
+  public Cobject( UUID new_uuid ) {
+      this.uuid = new_uuid;
+      this.parent = null;
+      this.setObjectType( Cobject.class );
+      this.createdAt = new Date();
+  }
+
+  public Cobject( UUID new_uuid, UUID new_parent ) {
+      this.uuid = new_uuid;
+      this.parent = new_parent;
+      this.setObjectType( Cobject.class );
+      this.createdAt = new Date();
+  }
+
+  public Cobject( UUID new_uuid, UUID new_parent, Date new_date ) {
+      this.uuid = new_uuid;
+      this.parent = new_parent;
+      this.setObjectType( Cobject.class );
+      this.createdAt = new_date;
+  }
+
+  public Cobject( String new_uuid ) {
+      this.uuid = UUID.fromString(new_uuid);
+      this.parent = null;
+      this.setObjectType( Cobject.class );
+      this.createdAt = new Date();
+  }
+
+  public Cobject( String new_uuid, String new_parent ) {
+      this.uuid = UUID.fromString(new_uuid);
+      this.parent = UUID.fromString(new_parent);
+      this.setObjectType( Cobject.class );
+      this.createdAt = new Date();
+  }
+
+  public Cobject( String new_uuid, String new_parent, Date new_date ) {
+      this.uuid = UUID.fromString(new_uuid);
+      this.setObjectType( Cobject.class );
+      this.parent = UUID.fromString(new_parent);
+      this.createdAt = new_date;
+  }
+
   public void setObjectType(Object thisObject) {
       this.objectType = thisObject;
   }
@@ -26,50 +78,6 @@ public class Cobject {
   public Object getObjectType() {
       return this.objectType;
   }
-
-  public Cobject( boolean foo ) { // to get clean Cobject stub without UUID
-  }
-
-  public Cobject() {
-      this.uuid = UUID.randomUUID();
-      this.setObjectType( Cobject.class );
-      this.createdAt = new Date();
-  }
-
-  public Cobject( UUID new_uuid ) {
-      this.uuid = new_uuid;
-      this.createdAt = new Date();
-  }
-
-  public Cobject( UUID new_uuid, UUID new_parent ) {
-      this.uuid = new_uuid;
-      this.parent = new_parent;
-      this.createdAt = new Date();
-  }
-
-  public Cobject( UUID new_uuid, UUID new_parent, Date new_date ) {
-      this.uuid = new_uuid;
-      this.parent = new_parent;
-      this.createdAt = new_date;
-  }
-
-  public Cobject( String new_uuid ) {
-      this.uuid = UUID.fromString(new_uuid);
-      this.createdAt = new Date();
-  }
-
-  public Cobject( String new_uuid, String new_parent ) {
-      this.uuid = UUID.fromString(new_uuid);
-      this.parent = UUID.fromString(new_parent);
-      this.createdAt = new Date();
-  }
-
-  public Cobject( String new_uuid, String new_parent, Date new_date ) {
-      this.uuid = UUID.fromString(new_uuid);
-      this.parent = UUID.fromString(new_parent);
-      this.createdAt = new_date;
-  }
-
 
   public void setUUID(UUID new_uuid) {
       this.uuid = new_uuid;
