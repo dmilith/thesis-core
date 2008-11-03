@@ -30,6 +30,8 @@ public class Cbody extends Cobject {
   // Constructors
   //
   public Cbody () {
+        super();
+        this.setObjectType( Cbody.class );
   };
   
   //
@@ -45,7 +47,7 @@ public class Cbody extends Cobject {
    * Set the value of health
    * @param newVar the new value of health
    */
-  private void setHealth ( int newVar ) {
+  public void setHealth ( int newVar ) {
     this.health = newVar;
   }
 
@@ -53,7 +55,7 @@ public class Cbody extends Cobject {
    * Get the value of health
    * @return the value of health
    */
-  private int getHealth ( ) {
+  public int getHealth ( ) {
     return this.health;
   }
 
@@ -61,7 +63,7 @@ public class Cbody extends Cobject {
    * Set the value of race
    * @param newVar the new value of race
    */
-  private void setRace ( int newVar ) {
+  public void setRace ( int newVar ) {
     this.race = newVar;
   }
 
@@ -69,7 +71,7 @@ public class Cbody extends Cobject {
    * Get the value of race
    * @return the value of race
    */
-  private int getRace ( ) {
+  public int getRace ( ) {
     return this.race;
   }
 
@@ -77,7 +79,7 @@ public class Cbody extends Cobject {
    * Set the value of inteligence
    * @param newVar the new value of inteligence
    */
-  private void setInteligence ( int newVar ) {
+  public void setInteligence ( int newVar ) {
     this.inteligence = newVar;
   }
 
@@ -85,7 +87,7 @@ public class Cbody extends Cobject {
    * Get the value of inteligence
    * @return the value of inteligence
    */
-  private int getInteligence ( ) {
+  public int getInteligence ( ) {
     return this.inteligence;
   }
 
@@ -93,7 +95,7 @@ public class Cbody extends Cobject {
    * Set the value of strength
    * @param newVar the new value of strength
    */
-  private void setStrength ( int newVar ) {
+  public void setStrength ( int newVar ) {
     this.strength = newVar;
   }
 
@@ -101,7 +103,7 @@ public class Cbody extends Cobject {
    * Get the value of strength
    * @return the value of strength
    */
-  private int getStrength ( ) {
+  public int getStrength ( ) {
     return this.strength;
   }
 
@@ -109,7 +111,7 @@ public class Cbody extends Cobject {
    * Set the value of dexterity
    * @param newVar the new value of dexterity
    */
-  private void setDexterity ( int newVar ) {
+  public void setDexterity ( int newVar ) {
     this.dexterity = newVar;
   }
 
@@ -117,7 +119,7 @@ public class Cbody extends Cobject {
    * Get the value of dexterity
    * @return the value of dexterity
    */
-  private int getDexterity ( ) {
+  public int getDexterity ( ) {
     return this.dexterity;
   }
 
@@ -125,7 +127,7 @@ public class Cbody extends Cobject {
    * Set the value of mind_strength
    * @param newVar the new value of mind_strength
    */
-  private void setMindStrength ( int newVar ) {
+  public void setMindStrength ( int newVar ) {
     this.mindStrength = newVar;
   }
 
@@ -133,7 +135,7 @@ public class Cbody extends Cobject {
    * Get the value of mind_strength
    * @return the value of mind_strength
    */
-  private int getMindStrength ( ) {
+  public int getMindStrength ( ) {
     return this.mindStrength;
   }
 
@@ -141,7 +143,7 @@ public class Cbody extends Cobject {
    * Set the value of gold
    * @param newVar the new value of gold
    */
-  private void setGold ( long newVar ) {
+  public void setGold ( long newVar ) {
     this.gold = newVar;
   }
 
@@ -149,7 +151,7 @@ public class Cbody extends Cobject {
    * Get the value of gold
    * @return the value of gold
    */
-  private long getGold ( ) {
+  public long getGold ( ) {
     return this.gold;
   }
 
@@ -157,7 +159,7 @@ public class Cbody extends Cobject {
    * Set the value of age
    * @param newVar the new value of age
    */
-  private void setAge ( int newVar ) {
+  public void setAge ( int newVar ) {
     this.age = newVar;
   }
 
@@ -165,7 +167,7 @@ public class Cbody extends Cobject {
    * Get the value of age
    * @return the value of age
    */
-  private int getAge ( ) {
+  public int getAge ( ) {
     return this.age;
   }
 
@@ -173,7 +175,7 @@ public class Cbody extends Cobject {
    * Set the value of luck
    * @param newVar the new value of luck
    */
-  private void setLuck ( int newVar ) {
+  public void setLuck ( int newVar ) {
     this.luck = newVar;
   }
 
@@ -181,7 +183,7 @@ public class Cbody extends Cobject {
    * Get the value of luck
    * @return the value of luck
    */
-  private int getLuck ( ) {
+  public int getLuck ( ) {
     return this.luck;
   }
 
@@ -189,7 +191,7 @@ public class Cbody extends Cobject {
    * Set the value of items
    * @param newVar the new value of items
    */
-  private void setItems ( Citem newVar ) {
+  public void setItems ( Citem newVar ) {
     this.items = newVar;
   }
 
@@ -197,23 +199,23 @@ public class Cbody extends Cobject {
    * Get the value of items
    * @return the value of items
    */
-  private Citem getItems ( ) {
+  public Citem getItems ( ) {
     return this.items;
   }
 
   /**
-   * Set the value of private_box
-   * @param newVar the new value of private_box
+   * Set the value of public_box
+   * @param newVar the new value of public_box
    */
-  private void setPrivateBox ( Citem newVar ) {
+  public void setpublicBox ( Citem newVar ) {
     this.privateBox = newVar;
   }
 
   /**
-   * Get the value of private_box
-   * @return the value of private_box
+   * Get the value of public_box
+   * @return the value of public_box
    */
-  private Citem getPrivateBox ( ) {
+  public Citem getpublicBox ( ) {
     return this.privateBox;
   }
 
@@ -221,7 +223,7 @@ public class Cbody extends Cobject {
    * Set the value of dead
    * @param newVar the new value of dead
    */
-  private void setDead ( boolean newVar ) {
+  public void setDead ( boolean newVar ) {
     this.dead = newVar;
   }
 
@@ -229,7 +231,7 @@ public class Cbody extends Cobject {
    * Get the value of dead
    * @return the value of dead
    */
-  private boolean getDead ( ) {
+  public boolean getDead ( ) {
     return this.dead;
   }
 
@@ -237,7 +239,7 @@ public class Cbody extends Cobject {
    * Set the value of position
    * @param newVar the new value of position
    */
-  private void setPosition ( Ccoordinates newVar ) {
+  public void setPosition ( Ccoordinates newVar ) {
     this.position = newVar;
   }
 
@@ -245,7 +247,7 @@ public class Cbody extends Cobject {
    * Get the value of position
    * @return the value of position
    */
-  private Ccoordinates getPosition ( ) {
+  public Ccoordinates getPosition ( ) {
     return this.position;
   }
 
@@ -253,7 +255,7 @@ public class Cbody extends Cobject {
    * Set the value of soul
    * @param newVar the new value of soul
    */
-  private void setSoul ( Csoul newVar ) {
+  public void setSoul ( Csoul newVar ) {
     this.soul = newVar;
   }
 
@@ -261,7 +263,7 @@ public class Cbody extends Cobject {
    * Get the value of soul
    * @return the value of soul
    */
-  private Csoul getSoul ( ) {
+  public Csoul getSoul ( ) {
     return this.soul;
   }
 
@@ -269,7 +271,7 @@ public class Cbody extends Cobject {
    * Set the value of name
    * @param newVar the new value of name
    */
-  private void setName ( String newVar ) {
+  public void setName ( String newVar ) {
     this.name = newVar;
   }
 
@@ -277,7 +279,7 @@ public class Cbody extends Cobject {
    * Get the value of name
    * @return the value of name
    */
-  private String getName ( ) {
+  public String getName ( ) {
     return this.name;
   }
 
@@ -285,7 +287,7 @@ public class Cbody extends Cobject {
    * Set the value of combat_ability
    * @param newVar the new value of combat_ability
    */
-  private void setCombatAbility ( int newVar ) {
+  public void setCombatAbility ( int newVar ) {
     this.combatAbility = newVar;
   }
 
@@ -293,7 +295,7 @@ public class Cbody extends Cobject {
    * Get the value of combat_ability
    * @return the value of combat_ability
    */
-  private int getCombat_ability ( ) {
+  public int getCombat_ability ( ) {
     return combatAbility;
   }
 
@@ -301,7 +303,7 @@ public class Cbody extends Cobject {
    * Set the value of armor
    * @param newVar the new value of armor
    */
-  private void setArmor ( int newVar ) {
+  public void setArmor ( int newVar ) {
     this.armor = newVar;
   }
 
@@ -309,7 +311,7 @@ public class Cbody extends Cobject {
    * Get the value of armor
    * @return the value of armor
    */
-  private int getArmor ( ) {
+  public int getArmor ( ) {
     return this.armor;
   }
 

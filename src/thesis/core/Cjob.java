@@ -3,7 +3,7 @@ package thesis.core;
 /**
  * Class CJob
  */
-public class CJob extends Cobject {
+public class Cjob extends Cobject {
 
   //
   // Fields
@@ -18,7 +18,9 @@ public class CJob extends Cobject {
   //
   // Constructors
   //
-  public CJob () {
+  public Cjob () {
+        super();
+        this.setObjectType( Cjob.class );
   };
   
   //
@@ -34,7 +36,7 @@ public class CJob extends Cobject {
    * Set the value of type
    * @param newVar the new value of type
    */
-  private void setType ( int newVar ) {
+  public void setType ( int newVar ) {
     this.type = newVar;
   }
 
@@ -42,7 +44,7 @@ public class CJob extends Cobject {
    * Get the value of type
    * @return the value of type
    */
-  private int getType ( ) {
+  public int getType ( ) {
     return this.type;
   }
 
@@ -50,7 +52,7 @@ public class CJob extends Cobject {
    * Set the value of actors_
    * @param newVar the new value of actors_
    */
-  private void setActor ( Cbody newVar, int whichOne ) {
+  public void setActor ( Cbody newVar, int whichOne ) {
     this.actors[ whichOne ] = newVar;
   }
 
@@ -58,7 +60,7 @@ public class CJob extends Cobject {
    * Get the value of actors_
    * @return the value of actors_
    */
-  private Cbody getActor ( int whichOne ) {
+  public Cbody getActor ( int whichOne ) {
     return this.actors[ whichOne ];
   }
 
@@ -66,7 +68,7 @@ public class CJob extends Cobject {
    * Set the value of job_id
    * @param newVar the new value of job_id
    */
-  private void setJobId ( String newVar ) {
+  public void setJobId ( String newVar ) {
     this.jobId = newVar;
   }
 
@@ -74,7 +76,7 @@ public class CJob extends Cobject {
    * Get the value of job_id
    * @return the value of job_id
    */
-  private String getJobId ( ) {
+  public String getJobId ( ) {
     return this.jobId;
   }
 
@@ -82,7 +84,7 @@ public class CJob extends Cobject {
    * Set the value of job_flags
    * @param newVar the new value of job_flags
    */
-  private void setJobFlags ( int newVar ) {
+  public void setJobFlags ( int newVar ) {
     this.jobFlags = newVar;
   }
 
@@ -90,7 +92,7 @@ public class CJob extends Cobject {
    * Get the value of job_flags
    * @return the value of job_flags
    */
-  private int getJobFlags ( ) {
+  public int getJobFlags ( ) {
     return this.jobFlags;
   }
 

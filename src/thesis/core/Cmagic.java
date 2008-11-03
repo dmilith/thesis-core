@@ -16,7 +16,10 @@ public class Cmagic extends Cobject {
   //
   // Constructors
   //
-  public Cmagic () { };
+  public Cmagic () {
+        super();
+        this.setObjectType( Cmagic.class );
+  };
   
   //
   // Methods
@@ -31,7 +34,7 @@ public class Cmagic extends Cobject {
    * Set the value of spell_name
    * @param newVar the new value of spell_name
    */
-  private void setSpellName ( String newVar ) {
+  public void setSpellName ( String newVar ) {
     this.spellName = newVar;
   }
 
@@ -39,7 +42,7 @@ public class Cmagic extends Cobject {
    * Get the value of spell_name
    * @return the value of spell_name
    */
-  private String getSpellName ( ) {
+  public String getSpellName ( ) {
     return this.spellName;
   }
 
@@ -47,7 +50,7 @@ public class Cmagic extends Cobject {
    * Set the value of mana_cost
    * @param newVar the new value of mana_cost
    */
-  private void setManaCost ( long newVar ) {
+  public void setManaCost ( long newVar ) {
     manaCost = newVar;
   }
 
@@ -55,7 +58,7 @@ public class Cmagic extends Cobject {
    * Get the value of mana_cost
    * @return the value of mana_cost
    */
-  private long getManaCost ( ) {
+  public long getManaCost ( ) {
     return manaCost;
   }
 
@@ -63,7 +66,7 @@ public class Cmagic extends Cobject {
    * Set the value of range
    * @param newVar the new value of range
    */
-  private void setRange ( int newVar ) {
+  public void setRange ( int newVar ) {
     this.range = newVar;
   }
 
@@ -71,7 +74,7 @@ public class Cmagic extends Cobject {
    * Get the value of range
    * @return the value of range
    */
-  private int getRange ( ) {
+  public int getRange ( ) {
     return range;
   }
 

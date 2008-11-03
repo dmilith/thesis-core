@@ -18,7 +18,10 @@ public class Citem extends Cobject {
   //
   // Constructors
   //
-  public Citem () { };
+  public Citem () {
+        super();
+        this.setObjectType( Citem.class );
+  };
   
   //
   // Methods
@@ -33,7 +36,7 @@ public class Citem extends Cobject {
    * Set the value of weight
    * @param newVar the new value of weight
    */
-  private void setWeight ( long newVar ) {
+  public void setWeight ( long newVar ) {
     this.weight = newVar;
   }
 
@@ -41,7 +44,7 @@ public class Citem extends Cobject {
    * Get the value of weight
    * @return the value of weight
    */
-  private long getWeight ( ) {
+  public long getWeight ( ) {
     return this.weight;
   }
 
@@ -66,7 +69,7 @@ public class Citem extends Cobject {
    * Set the value of amount
    * @param newVar the new value of amount
    */
-  private void setAmount ( int newVar ) {
+  public void setAmount ( int newVar ) {
     this.amount = newVar;
   }
 
@@ -74,7 +77,7 @@ public class Citem extends Cobject {
    * Get the value of amount
    * @return the value of amount
    */
-  private int getAmount ( ) {
+  public int getAmount ( ) {
     return this.amount;
   }
 
@@ -82,7 +85,7 @@ public class Citem extends Cobject {
    * Set the value of name
    * @param newVar the new value of name
    */
-  private void setName ( String newVar ) {
+  public void setName ( String newVar ) {
     this.name = newVar;
   }
 
@@ -90,7 +93,7 @@ public class Citem extends Cobject {
    * Get the value of name
    * @return the value of name
    */
-  private String getName ( ) {
+  public String getName ( ) {
     return this.name;
   }
 
