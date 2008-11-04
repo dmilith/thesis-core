@@ -25,7 +25,8 @@ public class Cbody extends Cobject {
   private String name;
   private int combatAbility;
   private int armor;
-  
+  private int speed; // speed of actor, means how fast he will move
+
   //
   // Constructors
   //
@@ -36,6 +37,7 @@ public class Cbody extends Cobject {
   public Cbody () {
         super();
         this.setObjectType( Cbody.class );
+        this.setName("Richard");
   };
   
   //
@@ -44,9 +46,31 @@ public class Cbody extends Cobject {
 
 
   //
-  // Accessor methods
+  // Action methods
   //
 
+  /**
+   * attack an opponent
+   * @param newVar the new value of health
+   */
+  public void attack( Cbody enemy ) {
+    // TODO FIXME: debug only calculation:
+    enemy.setHealth( enemy.getHealth() - this.strength );
+  }
+
+  /**
+   * attack an opponent
+   * @param newVar the new value of health
+   */
+  public void move( Ccoordinates target ) {
+    // TODO FIXME: move without any validations:
+    this.position = target;
+  }
+
+  //
+  // Setters and Getters
+  //
+  
   /**
    * Set the value of health
    * @param newVar the new value of health
@@ -208,20 +232,20 @@ public class Cbody extends Cobject {
   }
 
   /**
-   * Set the value of public_box
+   * Set the value of privateBox
    * @param newVar the new value of public_box
    */
-  public void setpublicBox ( Citem newVar ) {
-    this.privateBox = newVar;
-  }
+    public void setPrivateBox(Citem privateBox) {
+        this.privateBox = privateBox;
+    }
 
   /**
-   * Get the value of public_box
+   * Get the value of privateBox
    * @return the value of public_box
    */
-  public Citem getpublicBox ( ) {
-    return this.privateBox;
-  }
+    public Citem getPrivateBox() {
+        return privateBox;
+    }
 
   /**
    * Set the value of dead
@@ -319,6 +343,21 @@ public class Cbody extends Cobject {
     return this.armor;
   }
 
+  /**
+   * Get the value of speed
+   * @return the value of speed
+   */
+  public int getSpeed() {
+      return speed;
+  }
+
+  /**
+   * Set the value of speed
+   * @return void
+   */
+  public void setSpeed(int speed) {
+      this.speed = speed;
+  }
   //
   // Other methods
   //

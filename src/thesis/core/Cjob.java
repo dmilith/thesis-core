@@ -5,51 +5,79 @@ package thesis.core;
  */
 public class Cjob extends Cobject {
 
-  //
-  // Fields
-  //
 
-  private int type;
+  /**
+   * enums for every possible action in the game for every object.
+   */
+  public enum EbodyActionType {  actionAttack,
+                                    actionRun,
+                                    actionWalk,
+                                    actionTurn,
+                                    actionEatOrDrink,
+                                    actionSleep
+  };
+
+  public enum EsoulActionType {  actionRun,
+                                    actionWalk,
+                                    actionTurn,
+                                    actionEat,
+                                    actionSleep
+  };
+
+  private EbodyActionType actionType;
   private Cbody[] actors;
   private String jobId;
-//  private String jobCrc;
   private int jobFlags;
-  
+
+  /**
+   * done will store status of current job. if it's true then it's job which is already done.
+   */
+  boolean done;
+
+
   //
   // Constructors
   //
   public Cjob( boolean anything ) {
   }
 
-  public Cjob() {
+  /**
+   * creating job with two actors, with defined action
+   */
+  public Cjob( Cbody first, Cbody second[], EbodyActionType actionToDoType ) {
         super();
+        this.done = false; // new job, need to be run()
         this.setObjectType( Cjob.class );
+        this.setActor( first, 0 );
+        for ( int i = 1; i < second.length; ++i ) {
+            this.setActor( second[ i - 1 ], i );
+        }
   };
   
   //
   // Methods
   //
+  
+  public void runJob() {
+        switch( actionType ) {
+            case actionAttack: {
+                // TODO should have permission to attack more than one target
+               actors[0].attack( actors[1] );
+               if (debug) System.out.println(  "DEBUG: Attack:( " + actors[0].getName() + "#" + actors[0].getUUID() + ", " +
+                                                actors[1].getName() + "#" + actors[1].getUUID() + " )" );
+            } break;
+            case actionRun: {
+                actors[0].move( new Ccoordinates() );
+            } break;
+            default: {
 
+            } break;
+        }
 
+  }
   //
   // Accessor methods
   //
-
-  /**
-   * Set the value of type
-   * @param newVar the new value of type
-   */
-  public void setType ( int newVar ) {
-    this.type = newVar;
-  }
-
-  /**
-   * Get the value of type
-   * @return the value of type
-   */
-  public int getType ( ) {
-    return this.type;
-  }
 
   /**
    * Set the value of actors_

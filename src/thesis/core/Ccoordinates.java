@@ -1,5 +1,7 @@
 package thesis.core;
 
+import java.util.UUID;
+
 /**
  * Class Ccoordinates
  */
@@ -9,7 +11,7 @@ public class Ccoordinates extends Cobject {
   // Fields
   //
 
-  private String position;
+  private UUID position;
   
   //
   // Constructors
@@ -17,6 +19,11 @@ public class Ccoordinates extends Cobject {
   public Ccoordinates ( boolean anything ) {
   }
   
+  public Ccoordinates () {
+      super();
+      position = UUID.randomUUID();
+  }
+
   //
   // Methods
   //
@@ -30,7 +37,7 @@ public class Ccoordinates extends Cobject {
    * Set the value of position
    * @param newVar the new value of position
    */
-  private void setPosition ( String newVar ) {
+  private void setPosition ( UUID newVar ) {
     this.position = newVar;
   }
 
@@ -38,7 +45,7 @@ public class Ccoordinates extends Cobject {
    * Get the value of position
    * @return the value of position
    */
-  private String getPosition ( ) {
+  private UUID getPosition ( ) {
     return this.position;
   }
 
