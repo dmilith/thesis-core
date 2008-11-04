@@ -6,20 +6,24 @@ package thesis.core;
  */
 public class Csoul extends Cobject {
 
-    private boolean online = false;
+    private boolean online;
     private int mana;
     private int mindStrength;
+
+    public Csoul( boolean something ) {
+    }
 
     public Csoul() {
         super();
         this.setObjectType( Csoul.class );
+        this.online = false;
         this.mana = 0;
         this.mindStrength = 0;
     }
 
 
     public int getMana() {
-        return mana;
+        return this.mana;
     }
 
     public void setMana(int mana) {
@@ -35,7 +39,7 @@ public class Csoul extends Cobject {
     }
 
     public boolean isOnline() {
-        return online;
+        return this.online;
     }
 
     public void setOnline(boolean online) {

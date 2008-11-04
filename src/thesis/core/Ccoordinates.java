@@ -14,7 +14,8 @@ public class Ccoordinates extends Cobject {
   //
   // Constructors
   //
-  public Ccoordinates () { };
+  public Ccoordinates ( boolean anything ) {
+  }
   
   //
   // Methods

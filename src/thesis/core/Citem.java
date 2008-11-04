@@ -18,6 +18,9 @@ public class Citem extends Cobject {
   //
   // Constructors
   //
+  public Citem ( boolean anything ) {
+  }
+  
   public Citem () {
         super();
         this.setObjectType( Citem.class );

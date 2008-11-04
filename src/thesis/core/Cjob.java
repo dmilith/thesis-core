@@ -18,7 +18,10 @@ public class Cjob extends Cobject {
   //
   // Constructors
   //
-  public Cjob () {
+  public Cjob( boolean anything ) {
+  }
+
+  public Cjob() {
         super();
         this.setObjectType( Cjob.class );
   };

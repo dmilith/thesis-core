@@ -16,6 +16,9 @@ public class Cmagic extends Cobject {
   //
   // Constructors
   //
+  public Cmagic ( boolean anything ) {
+  }
+
   public Cmagic () {
         super();
         this.setObjectType( Cmagic.class );

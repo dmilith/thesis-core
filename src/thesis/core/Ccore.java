@@ -5,7 +5,10 @@ package thesis.core;
  */
 public class Ccore extends Cobject {
 
-  public Ccore () {
+  public Ccore( boolean anything ) {
+  }
+
+  public Ccore() {
         super();
         this.setObjectType( Ccore.class );
   };

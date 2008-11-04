@@ -29,6 +29,10 @@ public class Cbody extends Cobject {
   //
   // Constructors
   //
+
+  public Cbody( boolean anything ) {   
+  }
+
   public Cbody () {
         super();
         this.setObjectType( Cbody.class );
