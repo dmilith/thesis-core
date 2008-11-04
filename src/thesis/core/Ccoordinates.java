@@ -1,6 +1,7 @@
 package thesis.core;
 
 import java.util.UUID;
+import java.util.Vector;
 
 /**
  * Class Ccoordinates
@@ -12,7 +13,8 @@ public class Ccoordinates extends Cobject {
   //
 
   private UUID position;
-  
+  private Vector<UUID> positions;
+
   //
   // Constructors
   //
@@ -21,7 +23,11 @@ public class Ccoordinates extends Cobject {
   
   public Ccoordinates () {
       super();
+      positions = new Vector<UUID>(6);
       position = UUID.randomUUID();
+      for ( int i = 0; i < 5; ++i ) {
+          positions.add( i, null );
+      }
   }
 
   //
@@ -32,6 +38,14 @@ public class Ccoordinates extends Cobject {
   //
   // Accessor methods
   //
+
+  public UUID getPositionOf( int number ) {
+      return positions.elementAt( number );
+  }
+
+  public void setPositionOf(UUID position, int number) {
+      this.positions.insertElementAt(position, number);
+  }
 
   /**
    * Set the value of position
