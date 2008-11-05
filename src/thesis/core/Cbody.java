@@ -285,6 +285,7 @@ public class Cbody extends Cobject {
    */
   public void setSoul ( Csoul newVar ) {
     this.soul = newVar;
+    this.setParent( newVar.getUUID() );
   }
 
   /**
