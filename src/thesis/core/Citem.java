@@ -9,9 +9,10 @@ public class Citem extends Cobject {
   // Fields
   //
 
-  private long weight;
-  private int sizeOfItem;
+  enum EsizeOfItem {  TINY, SMALL, MEDIUM, BIG, LARGE, HUGE, GIGANTIC };
 
+  private EsizeOfItem sizeOfItem;
+  private long weight;
   private int amount;
   private String name;
   
@@ -56,7 +57,7 @@ public class Citem extends Cobject {
    * @param newVar the new value of size_of_item
    */
 
-  public void setSizeOfItem(int sizeOfItem) {
+  public void setSizeOfItem( EsizeOfItem sizeOfItem) {
       this.sizeOfItem = sizeOfItem;
   }
 
@@ -64,7 +65,7 @@ public class Citem extends Cobject {
    * Get the value of size_of_item
    * @return the value of size_of_item
    */
-  public int getSizeOfItem() {
+  public EsizeOfItem getSizeOfItem() {
       return this.sizeOfItem;
   }
 
