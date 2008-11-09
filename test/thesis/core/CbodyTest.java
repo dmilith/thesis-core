@@ -59,29 +59,31 @@ public class CbodyTest implements WorldAttributes {
     }
 
     /**
-     * Test of attack method, of class Cbody.
+     * Test of name generator
      */
     @Test
-    public void testGenerateName() {
-        System.out.println("generate name");
-        assertNotNull( cos );
-        for ( int i = 0; i< 2500; i++) {
-            if ( i % 17 == 0 ) System.out.println();
-            System.out.print( cos.generateName( Esex.Male ) + ", " );
-            assertNotNull( cos.generateName( Esex.Male ));
+    public void testGenerateFemaleName() {
+        Date time_now = null;
+        Date time_after = null;
+        long time = 0;
+        for ( int j = 0; j < 10; j++ ) { // warming up
+          time_now = new Date();
+          for ( int i = 0; i< 4000; i++) cos.generateName( Esex.Female );
+          time_after = new Date();
+          time = time_after.getTime() - time_now.getTime();
         }
-        System.out.println( "\n\n***********************************\n");
-        for ( int i = 0; i< 2500; i++) {
-            if ( i % 17 == 0 ) System.out.println();
-            System.out.print( cos.generateName( Esex.Female ) + ", " );
-            assertNotNull( cos.generateName( Esex.Female ));
-        }
-        System.out.println( "\n\n***********************************\n");
-        for ( int i = 0; i< 2500; i++) {
-            if ( i % 17 == 0 ) System.out.println();
-            System.out.print( cos.generateName( Esex.Hermaphrodite ) + ", " );
-            assertNotNull( cos.generateName( Esex.Hermaphrodite ));
-        }
+        assertTrue( time <= 250 ); // 0.20s for 4000 names as maximum
+        System.out.println( "Przed: " + time_now.getTime() );
+        System.out.println( "Po: " + time_after.getTime() );
+        System.out.println( "CZAS w ms: " + time );
+    }
+
+
+    /**
+     * Test of name generator
+     */
+    @Test
+    public void testGenerateMaleName() {
         Date time_now = null;
         Date time_after = null;
         long time = 0;
@@ -90,13 +92,58 @@ public class CbodyTest implements WorldAttributes {
           for ( int i = 0; i< 4000; i++) cos.generateName( Esex.Male );
           time_after = new Date();
           time = time_after.getTime() - time_now.getTime();
-          assertTrue( time <= 350 ); // 0.35s for 4000 names as maximum
+        }
+        assertTrue( time <= 250 ); // 0.20s for 4000 names as maximum
+        System.out.println( "Przed: " + time_now.getTime() );
+        System.out.println( "Po: " + time_after.getTime() );
+        System.out.println( "CZAS w ms: " + time );
+    }
+
+    /**
+     * Test of name generator
+     */
+    @Test
+    public void testGenerateHermaphroditeName() {
+        Date time_now = null;
+        Date time_after = null;
+        long time = 0;
+        for ( int j = 0; j < 10; j++ ) { // warming up
+          time_now = new Date();
+          for ( int i = 0; i< 4000; i++) cos.generateName( Esex.Hermaphrodite );
+          time_after = new Date();
+          time = time_after.getTime() - time_now.getTime();
+          assertTrue( time <= 250 ); // 0.20s for 4000 names as maximum
         }
         System.out.println( "Przed: " + time_now.getTime() );
         System.out.println( "Po: " + time_after.getTime() );
         System.out.println( "CZAS w ms: " + time );
     }
-    
+
+    @Test
+    public void testGeneratorOutput() {
+        System.out.println("generate name");
+        int amount = 0;
+        assertNotNull( cos );
+        for ( int i = 0; i< 2500; i++) {
+            System.out.print( cos.generateName( Esex.Male ) + ", " );
+            assertNotNull( cos.generateName( Esex.Male ));
+            ++amount;
+        }
+        System.out.println( "\n\n***********************************\n");
+        for ( int i = 0; i< 2500; i++) {
+            System.out.print( cos.generateName( Esex.Female ) + ", " );
+            assertNotNull( cos.generateName( Esex.Female ));
+            ++amount;
+        }
+        System.out.println( "\n\n***********************************\n");
+        for ( int i = 0; i< 2500; i++) {
+            System.out.print( cos.generateName( Esex.Hermaphrodite ) + ", " );
+            assertNotNull( cos.generateName( Esex.Hermaphrodite ));
+        }
+        System.out.println( "Ilość imion: " + amount );
+        assertTrue( amount >= 5000 ); // at least 5000 names
+    }
+
     /**
      * Test of move method, of class Cbody.
      */
