@@ -1,15 +1,19 @@
 package thesis.core;
 
+import java.util.Random;
+import java.util.Vector;
+
 /**
  * Class Ccharacter
  */
-public class Cbody extends Cobject {
+public class Cbody extends Cobject implements WorldAttributes {
 
   //
   // Fields
   //
   private int health;
   private int race;
+  private Esex sex;
   private int inteligence;
   private int strength;
   private int dexterity;
@@ -34,10 +38,18 @@ public class Cbody extends Cobject {
   public Cbody( boolean anything ) {   
   }
 
-  public Cbody () {
+  public Cbody () { // male by default
         super();
         this.setObjectType( Cbody.class );
-        this.setName("Richard");
+        this.setSex( Esex.Male );
+        this.setName( generateName( this.sex ) );
+  };
+
+  public Cbody ( Esex asex ) {
+        super();
+        this.setObjectType( Cbody.class );
+        this.setSex( asex );
+        this.setName( generateName( this.sex ) );
   };
   
   //
@@ -48,6 +60,32 @@ public class Cbody extends Cobject {
   //
   // Action methods
   //
+  public String generateName( Esex asex ) {
+      Random taken = new Random();
+      switch( asex ) {
+          case Male: {
+                Vector<EmaleNames> maleNames = new Vector<EmaleNames>();
+                int count = 0; //how many names we have?
+                for( EmaleNames c : EmaleNames.values() ) {
+                    maleNames.add( count, c );
+                    count++;
+                }
+                return maleNames.get( taken.nextInt( count ) ).toString();
+          }
+          case Female: {
+                Vector<EfemaleNames> femaleNames = new Vector<EfemaleNames>();
+                int count = 0; //how many names we have?
+                for( EfemaleNames c : EfemaleNames.values() ) {
+                    femaleNames.add( count, c );
+                    count++;
+                }
+                return femaleNames.get( taken.nextInt( count ) ).toString();
+          }
+          default: {
+                return "";
+          }
+      }
+  }
 
   /**
    * attack an opponent
@@ -70,7 +108,15 @@ public class Cbody extends Cobject {
   //
   // Setters and Getters
   //
-  
+
+  public Esex getSex() {
+      return this.sex;
+  }
+
+  public void setSex(Esex sex) {
+      this.sex = sex;
+  }
+
   /**
    * Set the value of health
    * @param newVar the new value of health
