@@ -18,6 +18,8 @@ public class Cobject {
   private Date createdAt;
   /* type of object */
   private Object objectType;
+  /* not active objects does not exists */
+  private boolean active;
 
   public Cobject( boolean foo ) { // to get clean Cobject stub without UUID
   }
@@ -25,6 +27,7 @@ public class Cobject {
   public Cobject() {
       this.uuid = UUID.randomUUID();
       this.parent = null;
+      this.active = true;
       this.setObjectType( Cobject.class );
       this.createdAt = new Date();
   }
@@ -32,6 +35,7 @@ public class Cobject {
   public Cobject( UUID new_uuid ) {
       this.uuid = new_uuid;
       this.parent = null;
+      this.active = true;
       this.setObjectType( Cobject.class );
       this.createdAt = new Date();
   }
@@ -39,6 +43,7 @@ public class Cobject {
   public Cobject( UUID new_uuid, UUID new_parent ) {
       this.uuid = new_uuid;
       this.parent = new_parent;
+      this.active = true;
       this.setObjectType( Cobject.class );
       this.createdAt = new Date();
   }
@@ -46,6 +51,7 @@ public class Cobject {
   public Cobject( UUID new_uuid, UUID new_parent, Date new_date ) {
       this.uuid = new_uuid;
       this.parent = new_parent;
+      this.active = true;
       this.setObjectType( Cobject.class );
       this.createdAt = new_date;
   }
@@ -53,6 +59,7 @@ public class Cobject {
   public Cobject( String new_uuid ) {
       this.uuid = UUID.fromString(new_uuid);
       this.parent = null;
+      this.active = true;
       this.setObjectType( Cobject.class );
       this.createdAt = new Date();
   }
@@ -60,6 +67,7 @@ public class Cobject {
   public Cobject( String new_uuid, String new_parent ) {
       this.uuid = UUID.fromString(new_uuid);
       this.parent = UUID.fromString(new_parent);
+      this.active = true;
       this.setObjectType( Cobject.class );
       this.createdAt = new Date();
   }
@@ -68,7 +76,16 @@ public class Cobject {
       this.uuid = UUID.fromString(new_uuid);
       this.setObjectType( Cobject.class );
       this.parent = UUID.fromString(new_parent);
+      this.active = true;
       this.createdAt = new_date;
+  }
+
+  public boolean isActive() {
+      return active;
+  }
+
+  public void setActive(boolean active_) {
+      this.active = active_;
   }
 
   public void setObjectType(Object thisObject) {
