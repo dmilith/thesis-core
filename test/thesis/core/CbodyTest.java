@@ -64,16 +64,22 @@ public class CbodyTest implements WorldAttributes {
     public void testGenerateName() {
         System.out.println("generate name");
         assertNotNull( cos );
-        for ( int i = 0; i< 500; i++) {
-            if ( i % 21 == 0 ) System.out.println();
+        for ( int i = 0; i< 250; i++) {
+            if ( i % 17 == 0 ) System.out.println();
             System.out.print( cos.generateName( Esex.Male ) + ", " );
             assertNotNull( cos.generateName( Esex.Male ));
         }
-        System.out.println( "\n***********************************\n");
-        for ( int i = 0; i< 500; i++) {
-            if ( i % 21 == 0 ) System.out.println();
+        System.out.println( "\n\n***********************************\n");
+        for ( int i = 0; i< 250; i++) {
+            if ( i % 17 == 0 ) System.out.println();
             System.out.print( cos.generateName( Esex.Female ) + ", " );
             assertNotNull( cos.generateName( Esex.Female ));
+        }
+        System.out.println( "\n\n***********************************\n");
+        for ( int i = 0; i< 250; i++) {
+            if ( i % 17 == 0 ) System.out.println();
+            System.out.print( cos.generateName( Esex.Hermaphrodite ) + ", " );
+            assertNotNull( cos.generateName( Esex.Hermaphrodite ));
         }
         
     }
