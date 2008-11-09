@@ -1,16 +1,17 @@
 package thesis.core;
 
+import java.util.Vector;
+
 /**
  * Class Citem
  */
-public class Citem extends Cobject {
+public class Citem extends Cobject implements WorldAttributes {
 
   //
   // Fields
   //
-
-  enum EsizeOfItem {  TINY, SMALL, MEDIUM, BIG, LARGE, HUGE, GIGANTIC };
-
+  private Vector<Ematerial> materials; // materials used to do an item
+  private Vector<EitemAttributes> attributes; // attributes of an item
   private EsizeOfItem sizeOfItem;
   private long weight;
   private int amount;
@@ -24,6 +25,8 @@ public class Citem extends Cobject {
   
   public Citem () {
         super();
+        this.attributes = new Vector<EitemAttributes>();
+        this.materials = new Vector<Ematerial>();
         this.setObjectType( Citem.class );
   };
   
@@ -35,6 +38,34 @@ public class Citem extends Cobject {
   //
   // Accessor methods
   //
+
+  /**
+   * Get the types of material
+   */
+  public Ematerial getMaterial( int index ) {
+      return materials.get( index );
+  }
+
+  /**
+   * Set the types of material
+   */
+  public void setMaterial( Ematerial material, int index ) {
+      this.materials.add( index, material );
+  }
+
+  /**
+   * Get the attribute
+   */
+  public EitemAttributes getAttribute( int index ) {
+      return attributes.get( index );
+  }
+
+  /**
+   * Set the types of material
+   */
+  public void setAttribute( EitemAttributes attribute, int index ) {
+      this.attributes.add( index, attribute );
+  }
 
   /**
    * Set the value of weight
