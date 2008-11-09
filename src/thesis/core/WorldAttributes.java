@@ -65,7 +65,42 @@ public interface WorldAttributes {
          , Ingph, Iengi, Araye, Chic, Shoun, Ers, Lloed, Ryngh, Yaty, Echs, Strech, Ochao, Arr, Wuit, Neet, Fur, Skelr, Ehina, Reuck, Tass, Ward
          , Verth, Lerb, Anh, Whiak, Tys, Tauck, Issn, Ashn, Quer, Iessi, Morg, Osl, Kayst, Ihona, Aryna, Dayf, Yerth, Ghat, Itk, Sulm, Tasd
          , Throos, Amoro, Rynb, Neyl, Samn, Inar, Nyf, Llec, Add, Sleir, Aundy, Aose, Ydyno, Odyni, Rodnd, Evero, Uore, Anld, Iquau, Athu
-         , Ichei, Lit, Enh, Ynale, Chuq, Saf, Uari, Vesph, Atm
+         , Ichei, Lit, Enh, Ynale, Chuq, Saf, Uari, Vesph, Atm, Poundem, Enthranech, Lyeoughash, Smouneng, Fitonpol, Shahinir, Goizhin, Untissper
+         , Ashcheden, Phyquarod, Chraorlye, Schialdmos, Eldadim, Tonkinser, Trorilir, Suwarold, Ruangsam, Blianton, Uskrilir, Coonser, Nineshy
+         , Tayeret, Sausor, Litinom, Osrothach, Ciayit, Oughildpol, Ildurnen, Sitasiss, Lyekinight, Hosulom, Smarrod, Liormris, Reekash, Thrailten
+         , Masenth, Rhaultine, Ersamtor, Honemril, Soonban, Theraughdyn, Yevorach, Tetiaia, Dredynris, Emtheryer, Morechrod, Athkimrak, Giriset
+         , Natasem, Hauwaw, Cheoldar, Gatintia, Meter, Kivesrod, Rothaughenth, Wiurnmor, Itrilryn, Snoechbur, Drachawar, Ardtanrad, Lorisskel
+         , Natasper, Lorvermos, Tonhatche, Niald, Phophvor, Serhatenth, Ceineold, Huoughit, Lukelage, Snyserche, Zhutherkal, Hegbel, Ridny, Swoshyest
+         , Haveria, Olddelbel, Inatinshy, Yuntaugh, Katonend, Arathem, Blochais, Slyrynlor, Yenat, Tyingper, Jiesskal, Rodasden, Garrileng
+         , Rynorhat, Daughche, Etlerorm, Ghaustroth, Thryiakel, Awtursul, Sagum, Noonim, Ranengough, Inaelmqua, Weacund, Snoopgha, Toncerit
+         , Naimsay, Alemosust, Untingight, Swouchrad, Rynelmir, Lykelris, Nierale, Bloashorm, Suinbur, Gychait, Rulos, Turbelend, Nopolack
+         , Rhuincer, Briater, Swiedeld, Ustpolrod, Nyalegha, Neendorm, Noisser, Yoephend, Neildran, Orkimrak, Throghaem, Cuiltad, Voranon
+         , Agetinit, Whuphage, Torerlye, Letasdan, Atormbur, Deilmos, Lerdrait, Torenshy, Enemmos, Rhoikach, Wardenem, Ghavorath, Undrakves, Daurnryn
+         , Lopurn, Dossqua, Garhonust, Beyrund, Yeusser, Caormcha, Steirron, Wheeptai, Cootard, Ateldom, Schonngha, Zairust, Suirdban, Strarodtor, Orhinight
+         , Danaleir, Staelpol, Soustsay, Banbelgar, Bysage, Inaoughban, Ageirorm, Siawem, Ildergha, Lyeasroth, Snaishdra, Bribim, Lorkimdar
+         , Droirdcer, Mothertur, Llaesbel, Feystim, Kichagha, Galale, Essenglor, Ronysmos, Rothtaitas, Essosgar, Ceyteng, Ackmorale, Juaughdyn
+         , Zuvoret, Sordest, Bibeltia, Chrekalest, Yuhonurn, Polinaeng, Quaildough, Kialdem, Saestunt, Trendler, Nonyswor, Leyend, Chepom
+         , Buicheng, Roantas, Fiuntir, Sasad, Burlyeough, Niurnon, Truardwar, Enthoughough, Rilmorves, Athiser, Estskelmor, Sonttai, Inaestia
+         , Witen, Masine, Smoomtia, Kuvther, Threventh, Schyechran, Aldirkal, Moraughem, Sasercha, Ranrilhat, Boonorm, Rynverche, Omdelcer
+         , Nolerang, Uskimgha, Hinsulrod, Rheypqua, Riburas, Taiworeng, Hinperald, Taesttin, Clooyest, Elmanen, Triashroth, Struageight
+         , Keilnal, Rynawny, Mosemsay, Chroohom, Nydanaw, Reupar, Throunard, Lauyelm, Whioldroth, Zeineurn, Thockash, Aragetai, Imendan
+         , Yidrany, Schinewar, Telyetor, Butiaech, Surilkal, Saminaorm, Slamorris, Torathpol, Letdyn, Phouhold, Laendser, Quiteng, Engperelm
+         , Vooughorm, Muawser, Ciessan, Ranonim, Zyltat, Wuardem, Tanustkel, Chraristas, Levunt, Phyraywar, Pourang, Siqia, Risquavor
+         , Nahonsul, Atlyeech, Jowves, Chronat, Lightenth, Nuldgha, Dorantas, Rothtanbur, Riyerrod, Stooyon, Tobanhat, Whuceror, Denyerper
+         , Raerest, Turmorine, Nyasest, Iabanash, Dartiaom, Pysskel, Risvorine, Threvorbur, Riepche, Breytan, Rhoustton, Seinntia, Llarodan
+         , Inaisurn, Chetia, Draldsay, Sweufgar, Fuighttur, Thrickdel, Cercherod, Rodnalmor, Strinhon, Saradnys, Umrodsam, Aledraina, Stiastvor
+         , Swoilray, Veriaeng, Rhunyack, Tounight, Naengwor, Daundban, Loosend, Aledanaw, Darver, Shyoughwar, Nyschaet, Laendan, Whaidaugh
+         , Lashorm, Smoithess, Danhinom, Kimildem, Schyntia, Snoogorm, Hiskeldar, Rytasest, Poldang, Danperine, Nechashy, Mietum, Lykalunt
+         , Rayomskel, Tagarat, Lleashem, Torquekin, Elmettai, Clokinlor, Quachaunt, Huickaugh, Toinril, Sluemos, Oldcerrod, Soororm, Danessran
+         , Lerhonque, Ceaphran, Ashyertia, Shinalild, Sneengche, Smoushtor, Cauntine, Rynbelath, Quesale, Dialdiss, Ingingon, Oldadban
+         , Teashis, Slyldves, Urnserim, Endsulmor, Keacking, Tanverough, Dapoller, Waturskel, Thoilvor, Laiache, Issradmor, Hiachryn
+         , Nayrskel, Lisulroth, Elmoman, Reultyer, Wosulwar, Untperelm, Smeania, Craebhon, Llurtest, Vorranyer, Llaepar, Zhighther, Schadaning
+         , Issraytan, Radenkin, Smoucar, Threalnal, Achkelche, Dradenler, Jultton, Onlergar, Chogeng, Zhanny, Ludynack, Tannbur, Achonen
+         , Nierdler, Toiltai, Burustage, Seennver, Honitom, Waqhat, Dobelkel, Smaskelorm , Anmorqua, Waremach, Aughrothar, Rothelmina
+         , Skelumdar, Batairan, Achvorina, Doovine, Angwarton, Kalormril, Skelormtia, Cluagetai, Smethdra, Umenran, Derisper, Niekia
+         , Lykimech, Zekelpol, Gyirold, Kaldardar, Drauthlor, Reannat, Breisad, Coothqua, Issranine, Nidynryn, Tephcha, Schatorina
+         , Ciyerough, Chesamcha, Zoompol, Tihonen, Drichroth, Moskelold, Torser, Physril, Stryradas, Veachgha, Huiltque, Arverelm, Clythrak
+         , Gearddan, Lerendet, Thradet, Eldthermos, Emoughight, Ledynsul, Triengril, Zotorer, Stoghawor, Rainris
     };
 
     public enum EfemaleNames {
