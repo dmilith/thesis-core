@@ -16,15 +16,15 @@ public interface WorldAttributes {
         COAL, METAL_ORE, COTTON, SILK, VELVET, HERB
     };
 
-    public enum EitemAttributes {
+    public enum EitemAttribute {
         NORMAL, ROTTEN, HARDENED, RUNIC, UNIQUE, ENCHANTED, MAGIC, BROKEN, INDESTRUCTIBLE, ORE, SOURCE, SHARP, BLUNT
     };
 
-    public enum EworldAttributes {
+    public enum EworldAttribute {
         COLD, WARM, NORMAL_GRAVITY, NO_GRAVITY, LOW_GRAVITY, HIGH_GRAVITY
     };
 
-    public enum EbodyAttributes {
+    public enum EbodyAttribute {
         THICK, THIN, TALL, SHORT, FAST, SLOW, TALENTED, STRONG, WEAK
     };
 
@@ -36,7 +36,7 @@ public interface WorldAttributes {
         SLOW, FAST, FREEZE, BURN, LIGHT, BLIND
     };
 
-    public enum EmaleNames {
+    public enum EmaleName {
          Christopher, Joseph, Joshua, Mark, John, Dalmar, Merhon, Gibour, Theodore, Gilbert, Mathew, Robert, Leonard, Bernard, Benedict
          , Neat, Bril, Uechu, Any, Oormy, Eraye, Sloogh, Pynd, Sers, Dayl, Enale, Ikimy, Yumi, Leard, Neab, Stealt, Leil, Edanu, Chrault, Teal
          , Idely, Craeck, Echl, Zeip, Toin, Rood, Crad, Breen, Serb, Bleinn, Iraki, Rech, Cergh, Snouph, Irrt, Opole, Nysg, Oise, Otaiy, Tan
@@ -103,7 +103,7 @@ public interface WorldAttributes {
          , Gearddan, Lerendet, Thradet, Eldthermos, Emoughight, Ledynsul, Triengril, Zotorer, Stoghawor, Rainris
     };
 
-    public enum EfemaleNames {
+    public enum EfemaleName {
         Luthri, Arion, Rhindel, Ceneris, Armeya, Aca, Arma, Atha, Atma, Aundia, Ondi, Uora, Athu, Araye, Aya, Makube, Sukume, Saar
         , Slarin, Sast, Svisathen, Nenus, Fenin, Inthynrg, Fenen, Senyn, Sthenkayn, Svisyrast, Kelys, Svus, Sthenus, Sithyn, Nenathin
         , Svens, Tinkaus, Ythkayn, Ssenisen, Synyrrlra, Nenens, Sythzon, Fenra, Svisys, Ythynys, Estin, Tinislin, Sthentysast, Kelyrith, Svithra
@@ -160,8 +160,12 @@ public interface WorldAttributes {
        Male, Female, Hermaphrodite
     };
 
-    public enum Eraces {
+    public enum Erace {
        Human, Dwarf, Elve, Gnome, Giant, Troll, Ogre, Orc, Spider, Bear, Wolf, Goat, Cow, Dragon, Elemental
+    };
+
+    public enum EexperienceLevel {
+       Novice, Beginner, Intermediate, Advanced, Expert, God
     };
 
 }

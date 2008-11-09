@@ -12,9 +12,10 @@ public class Cbody extends Cobject implements WorldAttributes {
   // Fields
   //
   private int health;
-  private int race;
+  private Erace race;
   private Esex sex;
   private int inteligence;
+  private int experience;
   private int strength;
   private int dexterity;
   private int mindStrength;
@@ -40,18 +41,39 @@ public class Cbody extends Cobject implements WorldAttributes {
 
   public Cbody () { // male by default
         super();
+        this.experience = new Random().nextInt( 100 );
         this.setObjectType( Cbody.class );
         this.setSex( Esex.Male );
-        this.setName( generateName( this.sex ) );
+        this.setRace( Erace.Human );
+        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() + "." );
   };
 
-  public Cbody ( Esex asex ) {
+  public Cbody ( Esex sex_ ) {
         super();
+        this.experience = new Random().nextInt( 100 );
         this.setObjectType( Cbody.class );
-        this.setSex( asex );
-        this.setName( generateName( this.sex ) );
+        this.setSex( sex_ );
+        this.setRace( Erace.Human );
+        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() + "." );
   };
   
+  public Cbody ( Erace race_ ) {
+        super();
+        this.experience = new Random().nextInt( 100 );
+        this.setObjectType( Cbody.class );
+        this.setSex( Esex.Male );
+        this.setRace( race_ );
+        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() +  ", " + this.getSex() + "." );
+  };
+
+  public Cbody ( Esex sex_, Erace race_ ) {
+        super();
+        this.experience = new Random().nextInt( 100 );
+        this.setObjectType( Cbody.class );
+        this.setSex( sex_ );
+        this.setRace( race_ );
+        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() );
+  };
   //
   // Methods
   //
@@ -64,18 +86,18 @@ public class Cbody extends Cobject implements WorldAttributes {
       Random taken = new Random();
       switch( asex ) {
           case Male: {
-                Vector<EmaleNames> maleNames = new Vector<EmaleNames>();
+                Vector<EmaleName> maleNames = new Vector<EmaleName>();
                 int count = 0; //how many names we have?
-                for( EmaleNames c : EmaleNames.values() ) {
+                for( EmaleName c : EmaleName.values() ) {
                     maleNames.add( count, c );
                     count++;
                 }
                 return maleNames.get( taken.nextInt( count ) ).toString();
           }
           case Female: {
-                Vector<EfemaleNames> femaleNames = new Vector<EfemaleNames>();
+                Vector<EfemaleName> femaleNames = new Vector<EfemaleName>();
                 int count = 0; //how many names we have?
-                for( EfemaleNames c : EfemaleNames.values() ) {
+                for( EfemaleName c : EfemaleName.values() ) {
                     femaleNames.add( count, c );
                     count++;
                 }
@@ -83,18 +105,18 @@ public class Cbody extends Cobject implements WorldAttributes {
           }
           default: { // female or male. randomly
                 if ( taken.nextInt(5) % 2 == 0 ) {
-                    Vector<EfemaleNames> femaleNames = new Vector<EfemaleNames>();
+                    Vector<EfemaleName> femaleNames = new Vector<EfemaleName>();
                     int count = 0;
-                    for( EfemaleNames c : EfemaleNames.values() ) {
+                    for( EfemaleName c : EfemaleName.values() ) {
                         femaleNames.add( count, c );
                         count++;
                     }
                     return femaleNames.get( taken.nextInt( count ) ).toString();
                 }
                 else {
-                    Vector<EmaleNames> maleNames = new Vector<EmaleNames>();
+                    Vector<EmaleName> maleNames = new Vector<EmaleName>();
                     int count2 = 0; //how many names we have?
-                    for( EmaleNames c : EmaleNames.values() ) {
+                    for( EmaleName c : EmaleName.values() ) {
                         maleNames.add( count2, c );
                         count2++;
                     }
@@ -126,6 +148,23 @@ public class Cbody extends Cobject implements WorldAttributes {
   // Setters and Getters
   //
 
+  public EexperienceLevel getExperienceLevel() {
+      if ( this.experience <= 500 ) return EexperienceLevel.Novice;
+      else if ( this.experience <= 1500 ) return EexperienceLevel.Beginner;
+      else if ( this.experience <= 4500 ) return EexperienceLevel.Intermediate;
+      else if ( this.experience <= 10000 ) return EexperienceLevel.Advanced;
+      else if ( this.experience <= 50000 ) return EexperienceLevel.Expert;
+      else return EexperienceLevel.God;
+  }
+
+  public int getExperienceAmount() {
+      return experience;
+  }
+
+  public void earnExperience( int experience_ ) {
+      this.experience += experience_;
+  }
+
   public Esex getSex() {
       return this.sex;
   }
@@ -154,7 +193,7 @@ public class Cbody extends Cobject implements WorldAttributes {
    * Set the value of race
    * @param newVar the new value of race
    */
-  public void setRace ( int newVar ) {
+  public void setRace ( Erace newVar ) {
     this.race = newVar;
   }
 
@@ -162,7 +201,7 @@ public class Cbody extends Cobject implements WorldAttributes {
    * Get the value of race
    * @return the value of race
    */
-  public int getRace ( ) {
+  public Erace getRace ( ) {
     return this.race;
   }
 

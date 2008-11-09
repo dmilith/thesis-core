@@ -448,4 +448,34 @@ public class CbodyTest implements WorldAttributes {
         System.out.println("kill");
     }
 
+    /**
+     * Test of name generator
+     */
+    @Test
+    public void testRealName() {
+        Cbody z = new Cbody();
+        System.out.println( z.getName() );
+        System.out.println( cos.getName() );
+    }
+
+    /**
+     * Eexperience level test
+     */
+    @Test
+    public void testExperienceLevel() {
+        Cbody m = new Cbody();
+        assertTrue( m.getExperienceLevel() == EexperienceLevel.Novice );
+        m.earnExperience(1000);
+        assertTrue( m.getExperienceLevel() == EexperienceLevel.Beginner );
+        m.earnExperience(3000);
+        assertTrue( m.getExperienceLevel() == EexperienceLevel.Intermediate );
+        m.earnExperience(5000);
+        assertTrue( m.getExperienceLevel() == EexperienceLevel.Advanced );
+        m.earnExperience(40000);
+        assertTrue( m.getExperienceLevel() == EexperienceLevel.Expert );
+        m.earnExperience(100000);
+        assertTrue( m.getExperienceLevel() == EexperienceLevel.God );
+    }
+
+
 }

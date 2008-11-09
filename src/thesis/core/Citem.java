@@ -11,7 +11,7 @@ public class Citem extends Cobject implements WorldAttributes {
   // Fields
   //
   private Vector<Ematerial> materials; // materials used to do an item
-  private Vector<EitemAttributes> attributes; // attributes of an item
+  private Vector<EitemAttribute> attributes; // attributes of an item
   private EsizeOfItem sizeOfItem;
   private long weight;
   private int amount;
@@ -25,7 +25,7 @@ public class Citem extends Cobject implements WorldAttributes {
   
   public Citem () {
         super();
-        this.attributes = new Vector<EitemAttributes>();
+        this.attributes = new Vector<EitemAttribute>();
         this.materials = new Vector<Ematerial>();
         this.setObjectType( Citem.class );
   };
@@ -56,14 +56,14 @@ public class Citem extends Cobject implements WorldAttributes {
   /**
    * Get the attribute
    */
-  public EitemAttributes getAttribute( int index ) {
+  public EitemAttribute getAttribute( int index ) {
       return attributes.get( index );
   }
 
   /**
    * Set the types of material
    */
-  public void setAttribute( EitemAttributes attribute, int index ) {
+  public void setAttribute( EitemAttribute attribute, int index ) {
       this.attributes.add( index, attribute );
   }
 
