@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  *
  * @author Daniel <dmilith> Dettlaff
  */
-public class CbodyTest {
+public class CbodyTest implements WorldAttributes {
 
     Cbody cos, cos2;
     Cobject root;
@@ -57,6 +57,26 @@ public class CbodyTest {
         assertEquals( cos2.getHealth(), 5 );
     }
 
+    /**
+     * Test of attack method, of class Cbody.
+     */
+    @Test
+    public void testGenerateName() {
+        System.out.println("generate name");
+        assertNotNull( cos );
+        for ( int i = 0; i< 500; i++) {
+            if ( i % 21 == 0 ) System.out.println();
+            System.out.print( cos.generateName( Esex.Male ) + ", " );
+            assertNotNull( cos.generateName( Esex.Male ));
+        }
+        System.out.println( "\n***********************************\n");
+        for ( int i = 0; i< 500; i++) {
+            if ( i % 21 == 0 ) System.out.println();
+            System.out.print( cos.generateName( Esex.Female ) + ", " );
+            assertNotNull( cos.generateName( Esex.Female ));
+        }
+        
+    }
     /**
      * Test of move method, of class Cbody.
      */
