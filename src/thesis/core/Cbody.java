@@ -81,8 +81,23 @@ public class Cbody extends Cobject implements WorldAttributes {
                 }
                 return femaleNames.get( taken.nextInt( count ) ).toString();
           }
-          default: {
-                return "";
+          default: { // female or male. randomly
+                Vector<EfemaleNames> femaleNames = new Vector<EfemaleNames>();
+                int count = 0;
+                for( EfemaleNames c : EfemaleNames.values() ) {
+                    femaleNames.add( count, c );
+                    count++;
+                }
+                Vector<EmaleNames> maleNames = new Vector<EmaleNames>();
+                int count2 = 0; //how many names we have?
+                for( EmaleNames c : EmaleNames.values() ) {
+                    maleNames.add( count2, c );
+                    count2++;
+                }
+                if ( taken.nextInt(5) % 2 == 0 )
+                    return femaleNames.get( taken.nextInt( count ) ).toString();
+                else
+                    return maleNames.get( taken.nextInt( count2 ) ).toString();
           }
       }
   }
