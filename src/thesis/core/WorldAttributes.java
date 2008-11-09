@@ -105,6 +105,55 @@ public interface WorldAttributes {
 
     public enum EfemaleNames {
         Luthri, Arion, Rhindel, Ceneris, Armeya, Aca, Arma, Atha, Atma, Aundia, Ondi, Uora, Athu, Araye
+        , Slarin, Sast, Svisathen, Nenus, Fenin, Inthynrg, Fenen, Senyn, Sthenkayn, Svisyrast, Kelys, Svus, Sthenus, Sithyn, Nenathin
+        , Svens, Tinkaus, Ythkayn, Ssenisen, Synyrrlra, Nenens, Sythzon, Fenra, Svisys, Ythynys, Estin, Tinislin, Sthentysast, Kelyrith, Svithra
+        , Issenus, Ssilenen, Sven, Ssra, Fenrg, Thenasten, Sus, Ssathith, Senzon, Sithisyn, Senen, Nenynyn, Ssellen, Estynyn, Ssthyrrg, Svisithus
+        , Sen, Sofen, Ssenens, Suss, Sithith, Ssilast, Sithasten, Sith, Corofen, Ssthislast, Svynin, Issisens, Senys, Ssthiyast, Isstysyn, Ssthisrg
+        , Ssyn, Nenyna, Slarellys, Estastin, Inthen, Thenisith, Sythiszon, Nenensi, Tinen, Sastith, Issyn, Isskaen, Ssenys, Issra, Svisyrin
+        , Sskast, Ssalle, Senenyn, Sseniys, Sithkara, Sveszon, Ssthus, Salith, Siys, Estzon, Svelthast, Ssus, Neniys, Ssilastith, Ssilen
+        , Senynte, Ssen, Ssilathen, Sthenyn, Estyrra, Thenithle, Ssrg, Ithenra, Ithynen, Inthathith, Issast, Senyryn, Inthyn, Sthenle
+        , Senisen, Chadosia, Chadjask, Mindassa, Iskassasta, Lisim, Smulilsala, Lirtimla, Sundilsa, Chamim, Assim, Feynast, Lassossa, Frichimla
+        , Stodadar, Sondirra, Frichjask, Mindosian, Lassjasksda, Ilaststa, Undistan, Marimla, Jiskadar, Jiskimsya, Jiskirra, Sundyqanya
+        , Marimsya, Nolastsda, Frichossa, Lisast, Sondilsanya, Lirtowiya, Lassakunya, Jiskirran, Iskassa, Mindim, Lirtassaya
+        , Lisassasda, Lisjask, Lirtirranya, Iskjasksda, Riechosianya, Maradar, Frichossan, Sundast, Lisista, Iljask, Ililsa
+        , Chanilsasta, Lirtassa, Swiashimsda, Mindychy, Iladar, Assassa, Lirtimnya, Iskadarsta, Chamistaya, Chanassasta, Maradarla
+        , Mindirrasta, Lassast, Sondiman, Lisadarst, Jisketunya, Frichosia, Chadegeya, Iskilsa, Frichosianya, Marulenya, Sundassala
+        , Chanebu, Phourtossasya, Sondosia, Lisimst, Chanista, Frichista, Chamimnya, Loiwimla, Chamadarsta, Sondastya, Frichast, Chanastla
+        , Chadege, Chadilsaya, Chamosia, Loeghastya, Chamosiasta, Lisilsa, Lisirrasya, Chadadar, Chadilsa, Chamassala, Sondossa
+        , Clokjaskan, Undim, Chamirrala, Chadim, Lisosiasda, Chanosia, Mindadar, Mindast, Sundossa, Ilalasta, Lirtosiasya, Ilimnya
+        , Lirtilsala, Dryrista, Ilirrala, Undista, Lisopy, Chamirraya, Iskistan, Jiskastsda, Mindadarsya, Keindistaya, Sondjasksya
+        , Jiskadarsta, Mindosia, Chadassa, Chamossasda, Assistanya, Mindastya, Lirtosiala, Ilosia, Chadassala, Lisosia, Caustistan, Sundimst
+        , Mindjasknya, Teantjask, Lisjasksya, Undirrast, Lisilsan, Chamilsa, Lirtjask, Chanadarya, Marosia, Chanirranya, Assosia
+        , Mindastla, Sundassasda, Chameghosta, Assossa, Lisamosta, Frichassanya, Assista, Sundirran, Mindirra, Assistast, Ilirra, Assastla
+        , Ilastsda, Assistasda, Frichjasksya, Mindistasta, Iskadar, Chamirra, Iskiman, Chadista, Sondosianya, Lirtirrasya, Chanistasta, Undaststa
+        , Assikist, Undast, Lirtadar, Sundilsasya, Lassim, Chaniman, Frichadar, Sondadar, Undistasta, Marossasya, Chadirra, Lirtim, Sondassa
+        , Chamossasya, Sondjasknya, Chamast, Trihossa, Chamikost, Jiskista, Sondistaya, Undyhe, Assassast, Chamistasda
+        , Phaesriru, Raeduesu, Pharirgue, Phiralstiru, Iada, Haithesuir, Aellyriadru, Reuna, Yalallocal, Sirith, Philaelis, Phainarap
+        , Ailosu, Aelaedru, Tyeudam, Yarim, Aerith, Yasurria, Hilasti, Yasursurap, Aedairiaru, Seostynu, Euralsulis, Ralaphos
+        , Ialo, Aeralrin, Lirith, Aestyrian, Idairia, Irithnu, Iali, Aesri, Iduesun, Sirithdil, Shurkaki, Chimkaki, Chajuz, Chathnai
+        , Shushurru, Shujesh, Nanect, Shuthict, Yimkare, Shushural, Ksajal, Shuyural, Chidduz, Narkichi, Chorkare, Ksarrakra, Shuneni
+        , Chasheni, Choddaja, Chirkus, Shuyesh, Choshiru, Chimkaja, Natheni, Berkakra, Yinict, Beddeni, Bemkel, Yijurru, Chimkare
+        , Beshict, Ksathural, Shurrel, Shurkakra, Choyus, Najuz, Choddnai, Bemkurru, Beddichi, Berraja, Yirkural, Shujash, Choshesh, Chishural
+        , Chiddnai, Anral, Yiyel, Shuthural, Shushichi, Inanura, Hiaralrgue, Eostyrap, Ralaerin, Seolinurin, Aithesu, Eosririaphos, Haistyllocal
+        , Eully, Tyirith, Seuri, Ina, Reulae, Sialaedru, Irallop, Phyasristi, Biqajak, Ajaqa, Etzlij, Kabak, Qaqalaj, Namtomin, Tstomich
+        , Chajenaj, Ajij, Kalasak, Namaj, Ixanal, Azajaqa, Tzich, Tsende, Azilij, Jolojin, Etzojende, Etzlam, Izlil, Ajimak, Aztomich
+        , Chtomaqa, Jolawak, Biqek, Jolin, Ajende, Etzlin, Kalawaqa, Kalilaqa, Etzlende, Ajak, Lanolak, Ixawaj, Jajajak, Ixich, Lanilos
+        , Chimaqa, Gahnich, Etzojim, Biqanil, Kaloyelja, Tzek, Chaqa, Biqelja, Ixim, Tsasek, Qaqyesak, Kachysal, Ixam, Izlende, Izlix
+        , Kacholos, Namich, Kachenij, Ajyesich, Chajal, Etzal, Izlilil, Chajawak, Qaqasin, Biqal, Ixin, Ajal, Jolich, Izlenal, Namal
+        , Tzal, Gahnak, Namam, Jolak, Lanimaj, Kachelja, Kalij, Kachich, Lanim, Biqix, Ajich, Gahnolos, Etztomil, Kalek, Tzam, Etzelja, Tzak
+        , Etzende, Ajix, Azelja, Namalal, Izlyeselja, Biqimaqa, Izlyesil, Kalam, Gahnaqa, Izlim, Ajasix, Chenaj, Ixos, Ajek, Tsenak, Chajyeselja
+        , Kachyesaj, Etzlajak, Jajak, Jajalin, Lanyesal, Kachak, Kalaj, Qaqaqa, Kabyesij, Jolanaj, Biqalix, Lanal, Kachal, Ixtomaqa, Jajasak
+        , Etzij, Izlolak, Lanilak, Etzin, Jajojak, Etzlek, Tzimek, Gahnal, Lanasil, Tsaqa, Lanimek, Ajelja, Jajich, Ajajix, Namyesal, Chos
+        , Tzasich, Kabyesal, Ixawal, Qaqalende, Tsayelja, Etzayil, Jolil, Elliel, Calelaren, Ellaren, Alriel, Sharishul, Shalael, Calalulash
+        , Cherin, Avisheven, Avalulash, Shalulatar, Elladur, Valishul, Sharaia, Relishul, Shalaradur, Raleleven, Relerin, Chael, Shaia
+        , Ellishaeish, Laenalatar, Alrishatar, Sharerin, Relaeish, Assilsa, Undjask, Chamjask, Chamossaya, Undossa, Sondjask, Iskjasknya, Frichistaya
+        , Jiskosiasda, Jiskiman, Mindirran, Chamirrasta, Lisirra, Lirtirra, Lirtassanya, Iskistala, Sundadar, Jiskim, Jiskassasya, Sondilsasta
+        , Iskirrasda, Sondista, Assjasknya, Chanossa, Chanastsda, Frichosiala, Mindirrasya, Booladar, Chamosiast, Lisossan, Ilosiasya, Lisarosya
+        , Lassjasksya, Marossaya, Iljasknya, Mindjasksda, Beecossa, Laenielaia, Relulaia, Ralalatar, Valaith, Showaith, Laenadur, Chiel
+        , Ralareven, Sharielaren, Averin, Avishul, Alrahur, Shalowatar, Lisimsta, Iskossast, Maristasya, Sondastst, Chanackinya, Mindossast
+        , Chadistaya, Mindistanya, Undilsa, Sautjask, Lassilsast, Lisadarsya, Ilidusda, Undjasksda, Frichadarst, Sondim, Undassa
+        , Frichilsasda, Smoildista, Lisadar, Marirra, Marjasknya, Iladaran, Chamossa, Marassan, Ilubinya, Bechistast, Assimsya, Sondosian
+        , Sondadarsta, Assedast, Chamilsast, Marista, Chaduto, Sondastla
     };
 
     public enum Esex {
