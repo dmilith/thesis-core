@@ -5,6 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.Date;
 import static org.junit.Assert.*;
 
 /**
@@ -64,25 +65,38 @@ public class CbodyTest implements WorldAttributes {
     public void testGenerateName() {
         System.out.println("generate name");
         assertNotNull( cos );
-        for ( int i = 0; i< 250; i++) {
+        for ( int i = 0; i< 2500; i++) {
             if ( i % 17 == 0 ) System.out.println();
             System.out.print( cos.generateName( Esex.Male ) + ", " );
             assertNotNull( cos.generateName( Esex.Male ));
         }
         System.out.println( "\n\n***********************************\n");
-        for ( int i = 0; i< 250; i++) {
+        for ( int i = 0; i< 2500; i++) {
             if ( i % 17 == 0 ) System.out.println();
             System.out.print( cos.generateName( Esex.Female ) + ", " );
             assertNotNull( cos.generateName( Esex.Female ));
         }
         System.out.println( "\n\n***********************************\n");
-        for ( int i = 0; i< 250; i++) {
+        for ( int i = 0; i< 2500; i++) {
             if ( i % 17 == 0 ) System.out.println();
             System.out.print( cos.generateName( Esex.Hermaphrodite ) + ", " );
             assertNotNull( cos.generateName( Esex.Hermaphrodite ));
         }
-        
+        Date time_now = null;
+        Date time_after = null;
+        long time = 0;
+        for ( int j = 0; j < 10; j++ ) { // warming up
+          time_now = new Date();
+          for ( int i = 0; i< 4000; i++) cos.generateName( Esex.Male );
+          time_after = new Date();
+          time = time_after.getTime() - time_now.getTime();
+          assertTrue( time <= 350 ); // 0.35s for 4000 names as maximum
+        }
+        System.out.println( "Przed: " + time_now.getTime() );
+        System.out.println( "Po: " + time_after.getTime() );
+        System.out.println( "CZAS w ms: " + time );
     }
+    
     /**
      * Test of move method, of class Cbody.
      */
