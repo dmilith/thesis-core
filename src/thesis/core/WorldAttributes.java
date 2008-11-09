@@ -104,7 +104,7 @@ public interface WorldAttributes {
     };
 
     public enum EfemaleNames {
-        Luthri, Arion, Rhindel, Ceneris, Armeya, Aca, Arma, Atha, Atma, Aundia, Ondi, Uora, Athu, Araye
+        Luthri, Arion, Rhindel, Ceneris, Armeya, Aca, Arma, Atha, Atma, Aundia, Ondi, Uora, Athu, Araye, Aya, Makube, Sukume, Saar
         , Slarin, Sast, Svisathen, Nenus, Fenin, Inthynrg, Fenen, Senyn, Sthenkayn, Svisyrast, Kelys, Svus, Sthenus, Sithyn, Nenathin
         , Svens, Tinkaus, Ythkayn, Ssenisen, Synyrrlra, Nenens, Sythzon, Fenra, Svisys, Ythynys, Estin, Tinislin, Sthentysast, Kelyrith, Svithra
         , Issenus, Ssilenen, Sven, Ssra, Fenrg, Thenasten, Sus, Ssathith, Senzon, Sithisyn, Senen, Nenynyn, Ssellen, Estynyn, Ssthyrrg, Svisithus
