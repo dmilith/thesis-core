@@ -7,33 +7,34 @@ package thesis.core;
 public interface WorldAttributes {
 
     public enum EsizeOfItem {
-        TINY, SMALL, MEDIUM, BIG, LARGE, HUGE, GIGANTIC
+        Tiny, Small, Medium, Big, Large, Huge, Gigantic
     };
 
     public enum Ematerial {
-        ROTTEN_MEAT, FLESH, WATER, BONE, ALCOHOL, ACID, LAVA, FLAME, WOOD, GLASS, GRASS, ROCK, GRANITE,
-        TALC, FLOUR, QUARTZ, TOPAZ, AGAT, RUBY, SAPHIRE, METAL, BRASS, SILVER, COPPER, GOLD, DIAMOND,
-        COAL, METAL_ORE, COTTON, SILK, VELVET, HERB
+        Rotten_Meat, Flesh, Water, Bone, Alcohol, Acid, Lava, Flame, Wood, Glass, Grass, Rock, Granite,
+        Talc, Flour, Quartz, Topaz, Agat, Ruby, Saphire, Iron, Brass, Silver, Copper, Gold, Diamond,
+        Coal, Cotton, Silk, Velvet, Herb, Clay
     };
 
     public enum EitemAttribute {
-        NORMAL, ROTTEN, HARDENED, RUNIC, UNIQUE, ENCHANTED, MAGIC, BROKEN, INDESTRUCTIBLE, ORE, SOURCE, SHARP, BLUNT
+        Normal, Rotten, Hardened, Runic, Unique, Enchanted, Magic, Broken, Indestructible, Ore, Source, Sharp, Blunt
     };
 
     public enum EworldAttribute {
-        COLD, WARM, NORMAL_GRAVITY, NO_GRAVITY, LOW_GRAVITY, HIGH_GRAVITY
+        Cold, Warm, Normal_Gravity, No_Gravity, Low_Gravity, High_Gravity
     };
 
     public enum EbodyAttribute {
-        THICK, THIN, TALL, SHORT, FAST, SLOW, TALENTED, STRONG, WEAK
+        Thick, Thin, Tall, Short, Fast, Slow, Talented, Strong, Weak
     };
 
     public enum EbodyProfession {
-        WARRIOR, ARCHER, MERCHANT, BLACKSMITH, PALADIN, FARMER, WOODCUTTER, METALURGICAL, HERBALIST, HEALER, BOWYER, FLETCHER, ARMORER, SCIENTIST, PRIEST
+        Warrior, Archer, Merchant, Blacksmith, Paladin, Farmer, Woodcutter, Herbalist, Healer, Bowyer
+          , Fletcher, Armorer, Priest, Warlock, Mage, Thief, Alchemist, Enchanter
     };
 
     public enum Emagic {
-        SLOW, FAST, FREEZE, BURN, LIGHT, BLIND
+        Slow, Fast, Freeze, Burn, Light, Blind, Telekinesis
     };
 
     public enum EmaleName {
@@ -161,7 +162,8 @@ public interface WorldAttributes {
     };
 
     public enum Erace {
-       Human, Dwarf, Elve, Gnome, Giant, Troll, Ogre, Orc, Spider, Bear, Wolf, Goat, Cow, Dragon, Elemental
+       Human, Dwarf, Elve, Gnome, Giant, Troll, Ogre, Orc, Spider, Bear, Wolf, Goat, Cow, Dragon, Water_Elemental, Fire_Elemental
+         , Clay_Elemental, Rock_Elemental
     };
 
     public enum EexperienceLevel {

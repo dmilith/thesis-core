@@ -446,6 +446,8 @@ public class CbodyTest implements WorldAttributes {
     @Test
     public void testKill() {
         System.out.println("kill");
+        cos.kill();
+        assertTrue( cos.isDead() );
     }
 
     /**
@@ -456,6 +458,10 @@ public class CbodyTest implements WorldAttributes {
         Cbody z = new Cbody();
         System.out.println( z.getName() );
         System.out.println( cos.getName() );
+        Cbody zz = new Cbody( Esex.Female );
+        System.out.println( zz.getName() );
+        Cbody zzy = new Cbody( 25000 );
+        System.out.println( zzy.getName() );
     }
 
     /**

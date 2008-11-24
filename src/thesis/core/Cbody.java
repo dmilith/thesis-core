@@ -34,7 +34,7 @@ public class Cbody extends Cobject implements WorldAttributes {
 
   //
   // Constructors
-  //
+  // TODO add randomly choosen sex, race and no names for annimals
 
   public Cbody( boolean anything ) {   
   }
@@ -42,6 +42,15 @@ public class Cbody extends Cobject implements WorldAttributes {
   public Cbody () { // male by default
         super();
         this.experience = new Random().nextInt( 100 );
+        this.setObjectType( Cbody.class );
+        this.setSex( Esex.Male );
+        this.setRace( Erace.Human );
+        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() + "." );
+  };
+
+  public Cbody ( int exp_ ) {
+        super();
+        this.experience = exp_;
         this.setObjectType( Cbody.class );
         this.setSex( Esex.Male );
         this.setRace( Erace.Human );
@@ -158,7 +167,7 @@ public class Cbody extends Cobject implements WorldAttributes {
   }
 
   public int getExperienceAmount() {
-      return experience;
+      return this.experience;
   }
 
   public void earnExperience( int experience_ ) {
@@ -361,7 +370,7 @@ public class Cbody extends Cobject implements WorldAttributes {
    * Get the value of dead
    * @return the value of dead
    */
-  public boolean getDead ( ) {
+  public boolean isDead ( ) {
     return this.dead;
   }
 
