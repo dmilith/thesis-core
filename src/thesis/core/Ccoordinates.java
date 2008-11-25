@@ -6,13 +6,14 @@ import java.util.Vector;
 /**
  * Class Ccoordinates
  */
-public class Ccoordinates extends Cobject {
+public class Ccoordinates extends Cobject implements WorldAttributes {
 
   //
   // Fields
   //
 
   private Vector<UUID> positions;
+  private EcoordinateBase coordType;
 
   //
   // Constructors
@@ -22,6 +23,7 @@ public class Ccoordinates extends Cobject {
   
   public Ccoordinates () {
       super();
+      coordType = EcoordinateBase.Soil;
       positions = new Vector<UUID>(6);
       for ( int i = 0; i < 5; ++i ) {
           positions.add( i, null );
@@ -45,6 +47,14 @@ public class Ccoordinates extends Cobject {
       this.positions.insertElementAt(position, number);
   }
 
+  public EcoordinateBase getCoordType() {
+    return coordType;
+  }
+
+  public void setCoordType(EcoordinateBase coordType) {
+    this.coordType = coordType;
+  }
+ 
   //
   // Other methods
   //

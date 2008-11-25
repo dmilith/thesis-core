@@ -6,12 +6,16 @@ package thesis.core;
  */
 public interface WorldAttributes {
 
+    public enum EcoordinateBase {
+        Soil, Rock, Grass, Desert, Snow, Ice, Water, Lava, Acid, Stone, Wood
+    };
+
     public enum EsizeOfItem {
         Tiny, Small, Medium, Big, Large, Huge, Gigantic
     };
 
     public enum Ematerial {
-        Rotten_Meat, Flesh, Water, Bone, Alcohol, Acid, Lava, Flame, Wood, Glass, Grass, Rock, Granite,
+        Rotten_Meat, Flesh, Water, Bone, Alcohol, Acid, Flame, Wood, Glass, Rock, Granite,
         Talc, Flour, Quartz, Topaz, Agat, Ruby, Saphire, Iron, Brass, Silver, Copper, Gold, Diamond,
         Coal, Cotton, Silk, Velvet, Herb, Clay
     };
