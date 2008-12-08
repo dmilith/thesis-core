@@ -1,20 +1,22 @@
 package thesis.core;
 
+import java.util.Vector;
+
 /**
  * Class CJob
  */
 public class Cjob extends Cobject implements WorldAttributes {
 
 
-  private EbodyActionType actionType;
-  private Cbody[] actors;
-  private String jobId;
+  private EActionType actionType;
+  private Vector<Cobject> actors;
   private int jobFlags;
 
   /**
    * done will store status of current job. if it's true then it's job which is already done.
    */
   boolean done;
+  boolean pending;
 
 
   //
@@ -26,17 +28,19 @@ public class Cjob extends Cobject implements WorldAttributes {
   /**
    * creating job with two actors, with defined action
    */
-  public Cjob( Cbody first, Cbody second[], EbodyActionType actionToDoType ) {
+
+  // Job for all objects interactions
+  public Cjob( Cobject first, Cobject second[], EActionType actionToDoType, int flags ) {
         super();
-        this.done = false; // new job, need to be run()
+        this.setJobFlags( 0 ); // no special flags
+        this.done = false; // new job, need to do run() to start a job
         this.setObjectType( Cjob.class );
         this.setActor( first, 0 );
         for ( int i = 1; i < second.length; ++i ) {
             this.setActor( second[ i - 1 ], i );
         }
   };
-  
-  //
+
   // Methods
   //
   
@@ -58,36 +62,29 @@ public class Cjob extends Cobject implements WorldAttributes {
   // Accessor methods
   //
 
+  // job is pending?
+  public boolean isPending() {
+    return pending;
+  }
+
+  public void setPending(boolean pending) {
+    this.pending = pending;
+  }
+
   /**
    * Set the value of actors_
    * @param newVar the new value of actors_
    */
-  public void setActor ( Cbody newVar, int whichOne ) {
-    this.actors[ whichOne ] = newVar;
+  public void setActor ( Cobject newVar, int whichOne ) {
+    this.actors.add( whichOne, newVar );
   }
 
   /**
    * Get the value of actors_
    * @return the value of actors_
    */
-  public Cbody getActor ( int whichOne ) {
-    return this.actors[ whichOne ];
-  }
-
-  /**
-   * Set the value of job_id
-   * @param newVar the new value of job_id
-   */
-  public void setJobId ( String newVar ) {
-    this.jobId = newVar;
-  }
-
-  /**
-   * Get the value of job_id
-   * @return the value of job_id
-   */
-  public String getJobId ( ) {
-    return this.jobId;
+  public Cobject getActor ( int whichOne ) {
+    return this.actors.elementAt( whichOne );
   }
 
   /**
@@ -109,13 +106,5 @@ public class Cjob extends Cobject implements WorldAttributes {
   //
   // Other methods
   //
-
-  /**
-   * crucial method which will run current job.
-   */
-  public void run( ) {
-
-  }
-
 
 }
