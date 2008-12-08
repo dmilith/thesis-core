@@ -6,6 +6,17 @@ package thesis.core;
  */
 public interface WorldAttributes {
 
+    /**
+     * enums for every possible action in the game for every object.
+     */
+    public enum EbodyActionType {
+        ActionAttack, ActionRun, ActionWalk, ActionTurn, ActionEatOrDrink, ActionSleep
+    };
+
+    public enum EsoulActionType {
+        ActionRun, ActionWalk, ActionTurn, ActionEat, ActionSleep
+    };
+
     public enum EcoordinateBase {
         Soil, Rock, Grass, Desert, Snow, Ice, Water, Lava, Acid, Stone, Wood
     };

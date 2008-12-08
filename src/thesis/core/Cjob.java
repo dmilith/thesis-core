@@ -3,26 +3,8 @@ package thesis.core;
 /**
  * Class CJob
  */
-public class Cjob extends Cobject {
+public class Cjob extends Cobject implements WorldAttributes {
 
-
-  /**
-   * enums for every possible action in the game for every object.
-   */
-  public enum EbodyActionType {  actionAttack,
-                                    actionRun,
-                                    actionWalk,
-                                    actionTurn,
-                                    actionEatOrDrink,
-                                    actionSleep
-  };
-
-  public enum EsoulActionType {  actionRun,
-                                    actionWalk,
-                                    actionTurn,
-                                    actionEat,
-                                    actionSleep
-  };
 
   private EbodyActionType actionType;
   private Cbody[] actors;
@@ -60,14 +42,11 @@ public class Cjob extends Cobject {
   
   public void runJob() {
         switch( actionType ) {
-            case actionAttack: {
-                // TODO should have permission to attack more than one target
-               actors[0].attack( actors[1] );
-               if (debug) System.out.println(  "DEBUG: Attack:( " + actors[0].getName() + "#" + actors[0].getUUID() + ", " +
-                                                actors[1].getName() + "#" + actors[1].getUUID() + " )" );
+            case ActionAttack: {
+              // TODO FIXME : add actions
             } break;
-            case actionRun: {
-                actors[0].move( new Ccoordinates() );
+            case ActionRun: {
+              
             } break;
             default: {
 
