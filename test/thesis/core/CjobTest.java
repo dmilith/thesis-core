@@ -70,11 +70,10 @@ public class CjobTest extends Cobject implements WorldAttributes {
       job = new Cjob( (Cobject)body1, (Cobject)body2, EActionType.ActionAttack, 0 );
       assertNotNull( job );
       assertTrue( job.isActive() );
-      assertTrue( !job.isPending() );
       job.run();
-      assertTrue( !job.isPending() );
       assertNotNull( job );
       assertTrue( !job.isActive() );
-      //assertTrue( !job.isPending() );
+
+
     }
 }

@@ -15,7 +15,6 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
   /**
    * done will store status of current job. if it's true then it's job which is already done.
    */
-  boolean pending;
 
 
   //
@@ -35,7 +34,6 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
         this.setObjectType( Cjob.class );
         this.actors = new Vector<Cobject>(2);
         this.actionType = actionToDoType;
-        this.setPending( false );
         this.actors.addElement( first );
         this.actors.addElement( second );
   };
@@ -46,7 +44,6 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
   @Override
   public void run() {
         try {
-          setPending( true );
             switch( this.actionType ) {
                 case ActionAttack: {
                 // TODO FIXME : add actions
@@ -58,25 +55,15 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
                 return; // no such Action? Job is a fake? Error?
               }
             }
-          
+
         } catch( Exception e ) {
             System.out.println("Exception in Cjob caught. Job UUID: " + this.getUUID() + "\nException: " + e );
         }
-        setPending( false );
         setActive( false ); // job's done!
   }
   //
   // Accessor methods
   //
-
-  // job is pending?
-  public boolean isPending() {
-    return pending;
-  }
-
-  public void setPending(boolean pending) {
-    this.pending = pending;
-  }
 
   /**
    * Set the value of job_flags
