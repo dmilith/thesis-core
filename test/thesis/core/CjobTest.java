@@ -83,36 +83,40 @@ public class CjobTest extends Cobject implements WorldAttributes {
     public void testMassAttackJob() {
       Date time_now = null;
       Date time_after = null;
-      long time = 0;
-      time_now = new Date();
-      Cobject zz1 = (Cobject)body1;
-      Cobject zz2 = (Cobject)body2;
-      for ( int i = 0; i < 10000; i++ ) {
-        job = new Cjob( zz1, zz2, EActionType.ActionAttack, 0 );
+      for (int j = 0; j < 50; j++ ) {
+        long time = 0;
+        time_now = new Date();
+        Cobject zz1 = (Cobject)body1;
+        Cobject zz2 = (Cobject)body2;
+        for ( int i = 0; i < 10000; i++ ) {
+          job = new Cjob( zz1, zz2, EActionType.ActionAttack, 0 );
+        }
+        time_after = new Date();
+        time = time_after.getTime() - time_now.getTime();
+        assertTrue( time <= 650 );
+        System.out.println( "AJ Przed: " + time_now.getTime() );
+        System.out.println( "AJ Po: " + time_after.getTime() );
+        System.out.println( "AJ CZAS w ms: " + time );
       }
-      time_after = new Date();
-      time = time_after.getTime() - time_now.getTime();
-      assertTrue( time <= 650 );
-      System.out.println( "Przed: " + time_now.getTime() );
-      System.out.println( "Po: " + time_after.getTime() );
-      System.out.println( "CZAS w ms: " + time );
     }
 
     @Test
     public void testMassWalkJob() {
       Date time_now = null;
       Date time_after = null;
-      long time = 0;
-      time_now = new Date();
-      for ( int i = 0; i < 20000; i++ ) {
-        job = new Cjob( (Cobject)body1, (Cobject)body2, EActionType.ActionWalk, 0 );
+      for (int j = 0; j < 50; j++ ) {
+        long time = 0;
+        time_now = new Date();
+        for ( int i = 0; i < 20000; i++ ) {
+          job = new Cjob( (Cobject)body1, (Cobject)body2, EActionType.ActionWalk, 0 );
+        }
+        time_after = new Date();
+        time = time_after.getTime() - time_now.getTime();
+        assertTrue( time <= 350 );
+        System.out.println( "WJ Przed: " + time_now.getTime() );
+        System.out.println( "WJ Po: " + time_after.getTime() );
+        System.out.println( "WJ CZAS w ms: " + time );
       }
-      time_after = new Date();
-      time = time_after.getTime() - time_now.getTime();
-      assertTrue( time <= 350 );
-      System.out.println( "Przed: " + time_now.getTime() );
-      System.out.println( "Po: " + time_after.getTime() );
-      System.out.println( "CZAS w ms: " + time );
     }
 
 }
