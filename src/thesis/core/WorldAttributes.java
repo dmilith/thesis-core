@@ -10,7 +10,8 @@ public interface WorldAttributes {
      * enums for every possible action in the game for every object.
      */
     public enum EActionType {
-        ActionAttack, ActionRun, ActionWalk, ActionTurn, ActionEatOrDrink, ActionSleep
+        ActionAttack, ActionRun, ActionWalk, ActionTurn, ActionEatOrDrink, ActionSleep,
+        ActionBlow, ActionMove, ActionTake, ActionGive
     };
 
     public enum EcoordinateBase {
