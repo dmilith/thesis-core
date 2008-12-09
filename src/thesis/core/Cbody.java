@@ -22,8 +22,8 @@ public class Cbody extends Cobject implements WorldAttributes {
   private long gold;
   private int age;
   private int luck;
-  private Citem items;
-  private Citem privateBox;
+  private Vector<Citem> items;
+  private Vector<Citem> privateBox;
   private boolean dead;
   private Ccoordinates position;
   private Csoul soul;
@@ -45,6 +45,8 @@ public class Cbody extends Cobject implements WorldAttributes {
         this.setObjectType( Cbody.class );
         this.sex = Esex.Male;
         this.race = Erace.Human;
+        this.items = new Vector<Citem>();
+        this.privateBox = new Vector<Citem>();
         this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
 
@@ -54,6 +56,8 @@ public class Cbody extends Cobject implements WorldAttributes {
         this.setObjectType( Cbody.class );
         this.sex = Esex.Male;
         this.race = Erace.Human;
+        this.items = new Vector<Citem>();
+        this.privateBox = new Vector<Citem>();
         this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
 
@@ -63,6 +67,8 @@ public class Cbody extends Cobject implements WorldAttributes {
         this.setObjectType( Cbody.class );
         this.sex = sex_;
         this.race = Erace.Human;
+        this.items = new Vector<Citem>();
+        this.privateBox = new Vector<Citem>();
         this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
   
@@ -72,6 +78,8 @@ public class Cbody extends Cobject implements WorldAttributes {
         this.setObjectType( Cbody.class );
         this.sex = Esex.Male;
         this.race = race_;
+        this.items = new Vector<Citem>();
+        this.privateBox = new Vector<Citem>();
         this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
 
@@ -81,6 +89,8 @@ public class Cbody extends Cobject implements WorldAttributes {
         this.setObjectType( Cbody.class );
         this.sex = sex_;
         this.race = race_;
+        this.items = new Vector<Citem>();
+        this.privateBox = new Vector<Citem>();
         this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
   //
@@ -326,36 +336,66 @@ public class Cbody extends Cobject implements WorldAttributes {
     return this.luck;
   }
 
+  public Vector<Citem> getItemsVector() {
+     return this.items;
+  }
+
+  public Vector<Citem> getPrivateItemsVector() {
+     return this.privateBox;
+  }
+
   /**
    * Set the value of items
    * @param newVar the new value of items
    */
-  public void setItems ( Citem newVar ) {
-    this.items = newVar;
+  public void addItem ( Citem newVar ) {
+    this.items.add( newVar );
+  }
+
+  public void removeItem ( int index ) {
+    this.items.remove( index );
+  }
+  public void removeItem ( Citem index ) {
+    this.items.remove( index );
   }
 
   /**
    * Get the value of items
    * @return the value of items
    */
-  public Citem getItems ( ) {
-    return this.items;
+  public Citem getItem( int index ) {
+    return this.items.elementAt( index );
+  }
+
+  public Citem getFirstItem() {
+    return this.items.firstElement();
   }
 
   /**
    * Set the value of privateBox
    * @param newVar the new value of public_box
    */
-    public void setPrivateBox(Citem privateBox) {
-        this.privateBox = privateBox;
+    public void addToPrivateBox(Citem privateBox) {
+        this.privateBox.add( privateBox );
+    }
+
+    public void removePrivateItem ( int index ) {
+    this.privateBox.remove( index );
+    }
+    public void removePrivateItem ( Citem index ) {
+      this.privateBox.remove( index );
     }
 
   /**
    * Get the value of privateBox
    * @return the value of public_box
    */
-    public Citem getPrivateBox() {
-        return privateBox;
+    public Citem getFirstFromPrivateBox() {
+        return privateBox.firstElement();
+    }
+
+    public Citem getFromPrivateBox( int index ) {
+        return privateBox.elementAt(index);
     }
 
   /**
