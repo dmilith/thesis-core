@@ -11,7 +11,7 @@ public interface WorldAttributes {
      */
     public enum EActionType {
         ActionAttack, ActionRun, ActionWalk, ActionTurn, ActionEatOrDrink, ActionSleep,
-        ActionBlow, ActionMove, ActionTake, ActionGive
+        ActionThrow, ActionTake, ActionGive
     };
 
     public enum EcoordinateBase {
