@@ -12,10 +12,11 @@ import static org.junit.Assert.*;
  *
  * @author Daniel <dmilith> Dettlaff
  */
-public class CbodyTest implements WorldAttributes {
+public class CbodyTest extends Cobject implements WorldAttributes {
 
     Cbody cos, cos2;
     Cobject root;
+    Citem specifiedItem;
 
     public CbodyTest() {
     }
@@ -39,7 +40,11 @@ public class CbodyTest implements WorldAttributes {
         cos2.setStrength(5);
         cos2.setHealth(10);
         cos.attack( cos2 );
-
+        specifiedItem = new Citem();
+        specifiedItem.setName("Brush");
+        cos.addItem( new Citem() );
+        cos.addItem( specifiedItem );
+        cos2.addItem( new Citem() );
     }
 
     @After
@@ -300,16 +305,35 @@ public class CbodyTest implements WorldAttributes {
      * Test of setItems method, of class Cbody.
      */
     @Test
-    public void testSetItems() {
-        System.out.println("setItems");
+    public void testGetAddItem1() {
+        System.out.println("getAddItem1");
+        assertNotNull( cos.getItemsVector() );
+        assertNotNull( cos.getFirstItem() );
+        assertNotNull( cos2.getFirstItem() );
+        assertTrue( cos.getItemsVector().size() == 2 );
+        assertTrue( cos2.getItemsVector().size() == 1 );
+        cos2.removeItem( cos2.getFirstItem() );
+        assertTrue( cos2.getItemsVector().size() == 0 );
+        assertEquals( cos.getItem(1).getName(), "Brush" );
+        Citem temp = new Citem();
+        temp = cos.getFirstItem();
+        cos.removeItem( temp );
+        assertEquals( cos.getFirstItem().getName(), "Brush" );
     }
 
     /**
      * Test of getItems method, of class Cbody.
      */
     @Test
-    public void testGetItems() {
-        System.out.println("getItems");
+    public void testGive() {
+        System.out.println("getGive");
+        Citem itemA = cos.getItem(0);
+        Citem itemB = cos.getItem(1);
+        cos.give( cos2, cos.getItem(0) );
+        assertEquals( itemA.getUUID(), cos2.getItem( cos2.getItemsVector().size() - 1 ).getUUID() );
+        assertNotSame( cos.getItem(0).getUUID(), itemA.getUUID() );
+        assertEquals( cos.getItem(0).getUUID(), itemB.getUUID() );
+        assertTrue( cos2.getItemsVector().size() == 2 );
     }
 
     /**
