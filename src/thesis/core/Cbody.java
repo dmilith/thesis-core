@@ -101,6 +101,16 @@ public class Cbody extends Cobject implements WorldAttributes {
   //
   // Action methods
   //
+
+  public boolean give( Cbody target, Citem player_item ) {
+    if (this.items.contains( player_item )) {
+      target.addItem(player_item);
+      this.removeItem(player_item);
+      return true;
+    }
+    return false;
+  }
+
   public String generateName( Esex asex ) {
       Random taken = new Random();
       switch( asex ) {
