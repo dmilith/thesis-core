@@ -107,16 +107,22 @@ public class CjobTest extends Cobject implements WorldAttributes {
       for (int j = 0; j < 50; j++ ) {
         long time = 0;
         time_now = new Date();
-        for ( int i = 0; i < 20000; i++ ) {
+        for ( int i = 0; i < 10000; i++ ) {
           job = new Cjob( (Cobject)body1, (Cobject)body2, EActionType.ActionWalk, 0 );
         }
         time_after = new Date();
         time = time_after.getTime() - time_now.getTime();
-        assertTrue( time <= 350 );
+        assertTrue( time <= 250 );
         System.out.println( "WJ Przed: " + time_now.getTime() );
         System.out.println( "WJ Po: " + time_after.getTime() );
         System.out.println( "WJ CZAS w ms: " + time );
       }
+    }
+
+    @Test
+    public void testSecondConstructor() {
+      job = new Cjob( (Cobject)body1, (Cobject)body2, (Cobject)body1, EActionType.ActionWalk, 0 );
+      assertNotNull( job );
     }
 
 }

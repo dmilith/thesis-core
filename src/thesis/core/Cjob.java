@@ -38,6 +38,17 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
         this.actors.add( 1, second );
   };
 
+  Cjob( final Cobject first, final Cobject second, final Cobject third, final EActionType actionToDoType, final int flags ) {
+        super();
+        this.jobFlags = flags; // additional flags given to the job
+        this.setObjectType( Cjob.class );
+        this.actors = new Vector<Cobject>(3);
+        this.actionType = actionToDoType;
+        this.actors.add( 0, first );
+        this.actors.add( 1, second );
+        this.actors.add( 2, third );
+  };
+
   // Methods
   //
 
@@ -46,30 +57,31 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
         try {
             switch( this.actionType ) {
                 case ActionAttack: {
-                // attack could be done only with Cbody vs Cbody
-                ((Cbody)(this.actors.elementAt( 0 ))).attack( (Cbody)this.actors.elementAt( 1 ) );
+                  // attack could be done only with Cbody vs Cbody
+                  ((Cbody)(this.actors.elementAt( 0 ))).attack( (Cbody)this.actors.elementAt( 1 ) );
               } break;
               case ActionWalk: {
-                // walk could be done only with Cbody vs Ccoordinates
+                  // walk could be done only with Cbody vs Ccoordinates
 
               } break;
               case ActionRun: {
-                // walk could be done only with Cbody vs Ccoordinates
+                  // walk could be done only with Cbody vs Ccoordinates
 
               } break;
               case ActionTake: {
-                // take could be done only with Cbody vs Citem
-                  // TODO: FIXME: we need to get more than two objects: 2x Cbody and 1x Citem
+                  // take could be done only with Cbody(source) Cbody(target) and Citem(from source Cbody)
+
               } break;
               case ActionGive: {
-                // give could be done only with Cbody vs Citem
-                  // TODO: FIXME: we need to get more than two objects: 2x Cbody and 1x Citem
+                  // give could be done only with Cbody(source) Cbody(target) and Citem(from source Cbody)
+
               } break;
               case ActionThrow: {
-                //  could be done only with Cbody vs Citem, flags will keep direction and other info
+                  //  could be done only with Cbody vs Citem, flags will keep direction and other info
+                
               } break;
               default: {
-                return; // no such Action? Job is a fake? Error?
+                  return; // no such Action? Job is a fake? Error?
               }
             }
 

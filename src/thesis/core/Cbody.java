@@ -31,7 +31,7 @@ public class Cbody extends Cobject implements WorldAttributes {
   private int combatAbility;
   private int armor;
   private int speed; // speed of actor, means how fast he will move
-
+ // TODO:  private int turnDirection; // value of turn direction of body ( range of sight )
   //
   // Constructors
   // TODO add randomly choosen sex, race and no names for annimals
