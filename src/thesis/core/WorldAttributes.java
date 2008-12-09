@@ -166,7 +166,8 @@ public interface WorldAttributes {
         , Ralareven, Sharielaren, Averin, Avishul, Alrahur, Shalowatar, Lisimsta, Iskossast, Maristasya, Sondastst, Chanackinya, Mindossast
         , Chadistaya, Mindistanya, Undilsa, Sautjask, Lassilsast, Lisadarsya, Ilidusda, Undjasksda, Frichadarst, Sondim, Undassa
         , Frichilsasda, Smoildista, Lisadar, Marirra, Marjasknya, Iladaran, Chamossa, Marassan, Ilubinya, Bechistast, Assimsya, Sondosian
-        , Sondadarsta, Assedast, Chamilsast, Marista, Chaduto, Sondastla
+        , Sondadarsta, Assedast, Chamilsast, Marista, Chaduto, Sondastla, Euhoupia, Rusfo, Gotha, Midebulas, Anati, Alenti, Kami, Kalti, Ruti
+        , Reli, Mari, Orna, Morna, Kori, Krena, Terna
     };
 
     public enum Esex {
