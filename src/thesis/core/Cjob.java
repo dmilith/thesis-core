@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * Class CJob
  */
-public class Cjob extends Cobject implements WorldAttributes {
+public class Cjob extends Cobject implements WorldAttributes, Runnable {
 
 
   private EActionType actionType;
@@ -15,14 +15,13 @@ public class Cjob extends Cobject implements WorldAttributes {
   /**
    * done will store status of current job. if it's true then it's job which is already done.
    */
-  boolean done;
   boolean pending;
 
 
   //
   // Constructors
   //
-  public Cjob( boolean anything ) {
+  Cjob( boolean anything ) {
   }
 
   /**
@@ -30,33 +29,41 @@ public class Cjob extends Cobject implements WorldAttributes {
    */
 
   // Job for all objects interactions
-  public Cjob( Cobject first, Cobject second[], EActionType actionToDoType, int flags ) {
+  Cjob( Cobject first, Cobject second, EActionType actionToDoType, int flags ) {
         super();
-        this.setJobFlags( 0 ); // no special flags
-        this.done = false; // new job, need to do run() to start a job
+        this.setJobFlags( flags ); // additional flags given to the job
         this.setObjectType( Cjob.class );
-        this.setActor( first, 0 );
-        for ( int i = 1; i < second.length; ++i ) {
-            this.setActor( second[ i - 1 ], i );
-        }
+        this.actors = new Vector<Cobject>(2);
+        this.actionType = actionToDoType;
+        this.setPending( false );
+        this.actors.addElement( first );
+        this.actors.addElement( second );
   };
 
   // Methods
   //
-  
-  public void runJob() {
-        switch( actionType ) {
-            case ActionAttack: {
-              // TODO FIXME : add actions
-            } break;
-            case ActionRun: {
-              
-            } break;
-            default: {
 
-            } break;
+  @Override
+  public void run() {
+        try {
+          setPending( true );
+            switch( this.actionType ) {
+                case ActionAttack: {
+                // TODO FIXME : add actions
+              } break;
+              case ActionRun: {
+
+              } break;
+              default: {
+                return; // no such Action? Job is a fake? Error?
+              }
+            }
+          
+        } catch( Exception e ) {
+            System.out.println("Exception in Cjob caught. Job UUID: " + this.getUUID() + "\nException: " + e );
         }
-
+        setPending( false );
+        setActive( false ); // job's done!
   }
   //
   // Accessor methods
@@ -69,22 +76,6 @@ public class Cjob extends Cobject implements WorldAttributes {
 
   public void setPending(boolean pending) {
     this.pending = pending;
-  }
-
-  /**
-   * Set the value of actors_
-   * @param newVar the new value of actors_
-   */
-  public void setActor ( Cobject newVar, int whichOne ) {
-    this.actors.add( whichOne, newVar );
-  }
-
-  /**
-   * Get the value of actors_
-   * @return the value of actors_
-   */
-  public Cobject getActor ( int whichOne ) {
-    return this.actors.elementAt( whichOne );
   }
 
   /**
