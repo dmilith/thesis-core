@@ -1,11 +1,12 @@
 package thesis.core;
 
 import java.util.Vector;
+import java.util.HashMap;
 
 /**
  * Class Citem
  */
-public class Citem extends Cobject implements WorldAttributes {
+public class Citem extends Cobject implements WorldAttributes, WorldDefinedItems {
 
   //
   // Fields
@@ -27,6 +28,17 @@ public class Citem extends Cobject implements WorldAttributes {
         super();
         this.attributes = new Vector<EitemAttribute>();
         this.materials = new Vector<Ematerial>();
+        this.setObjectType( Citem.class );
+  };
+
+  public Citem ( String _name, int _amount, long _weight, EsizeOfItem _sizeOfItem, Vector<EitemAttribute> _attributes, Vector<Ematerial> _materials ) {
+        super();
+        this.name = _name;
+        this.amount = _amount;
+        this.weight = _weight;
+        this.sizeOfItem = _sizeOfItem;
+        this.attributes = _attributes;
+        this.materials = _materials;
         this.setObjectType( Citem.class );
   };
   
