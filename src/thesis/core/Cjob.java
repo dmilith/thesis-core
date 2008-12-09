@@ -28,14 +28,14 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
    */
 
   // Job for all objects interactions
-  Cjob( Cobject first, Cobject second, EActionType actionToDoType, int flags ) {
+  Cjob( final Cobject first, final Cobject second, final EActionType actionToDoType, final int flags ) {
         super();
-        this.setJobFlags( flags ); // additional flags given to the job
+        this.jobFlags = flags; // additional flags given to the job
         this.setObjectType( Cjob.class );
         this.actors = new Vector<Cobject>(2);
         this.actionType = actionToDoType;
-        this.actors.addElement( first );
-        this.actors.addElement( second );
+        this.actors.add( 0, first );
+        this.actors.add( 1, second );
   };
 
   // Methods
@@ -46,9 +46,10 @@ public class Cjob extends Cobject implements WorldAttributes, Runnable {
         try {
             switch( this.actionType ) {
                 case ActionAttack: {
-                // TODO FIXME : add actions
+                // attack could be done only Cbody vs Cbody
+                ((Cbody)(this.actors.elementAt( 0 ))).attack( (Cbody)this.actors.elementAt( 1 ) );
               } break;
-              case ActionRun: {
+              case ActionWalk: {
 
               } break;
               default: {

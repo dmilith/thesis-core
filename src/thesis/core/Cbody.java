@@ -43,45 +43,45 @@ public class Cbody extends Cobject implements WorldAttributes {
         super();
         this.experience = new Random().nextInt( 100 );
         this.setObjectType( Cbody.class );
-        this.setSex( Esex.Male );
-        this.setRace( Erace.Human );
-        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() + "." );
+        this.sex = Esex.Male;
+        this.race = Erace.Human;
+        this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
 
   public Cbody ( int exp_ ) {
         super();
         this.experience = exp_;
         this.setObjectType( Cbody.class );
-        this.setSex( Esex.Male );
-        this.setRace( Erace.Human );
-        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() + "." );
+        this.sex = Esex.Male;
+        this.race = Erace.Human;
+        this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
 
   public Cbody ( Esex sex_ ) {
         super();
         this.experience = new Random().nextInt( 100 );
         this.setObjectType( Cbody.class );
-        this.setSex( sex_ );
-        this.setRace( Erace.Human );
-        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() + "." );
+        this.sex = sex_;
+        this.race = Erace.Human;
+        this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
   
   public Cbody ( Erace race_ ) {
         super();
         this.experience = new Random().nextInt( 100 );
         this.setObjectType( Cbody.class );
-        this.setSex( Esex.Male );
-        this.setRace( race_ );
-        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() +  ", " + this.getSex() + "." );
+        this.sex = Esex.Male;
+        this.race = race_;
+        this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
 
   public Cbody ( Esex sex_, Erace race_ ) {
         super();
         this.experience = new Random().nextInt( 100 );
         this.setObjectType( Cbody.class );
-        this.setSex( sex_ );
-        this.setRace( race_ );
-        this.setName( generateName( this.sex ) + " the " + this.getRace() + " " + this.getExperienceLevel() + ", " + this.getSex() );
+        this.sex = sex_;
+        this.race = race_;
+        this.name = generateName( this.sex ) + " the " + this.race + " " + this.experience + ", " + this.sex + ".";
   };
   //
   // Methods

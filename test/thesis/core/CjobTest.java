@@ -10,7 +10,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import java.util.Vector;
+import java.util.Date;
 import static org.junit.Assert.*;
 
 /**
@@ -37,6 +37,7 @@ public class CjobTest extends Cobject implements WorldAttributes {
 
     @Before
     public void setUp() {
+      System.gc();
       soul1 = new Csoul();
       soul2 = new Csoul();
       body1 = new Cbody();
@@ -70,10 +71,48 @@ public class CjobTest extends Cobject implements WorldAttributes {
       job = new Cjob( (Cobject)body1, (Cobject)body2, EActionType.ActionAttack, 0 );
       assertNotNull( job );
       assertTrue( job.isActive() );
+      int hth = body2.getHealth();
+      assertNotNull( job.getUUID() );
       job.run();
+      assertEquals( body2.getHealth(), hth - body1.getStrength() );
       assertNotNull( job );
       assertTrue( !job.isActive() );
-
-
     }
+
+    @Test
+    public void testMassAttackJob() {
+      Date time_now = null;
+      Date time_after = null;
+      long time = 0;
+      time_now = new Date();
+      Cobject zz1 = (Cobject)body1;
+      Cobject zz2 = (Cobject)body2;
+      for ( int i = 0; i < 10000; i++ ) {
+        job = new Cjob( zz1, zz2, EActionType.ActionAttack, 0 );
+      }
+      time_after = new Date();
+      time = time_after.getTime() - time_now.getTime();
+      assertTrue( time <= 650 );
+      System.out.println( "Przed: " + time_now.getTime() );
+      System.out.println( "Po: " + time_after.getTime() );
+      System.out.println( "CZAS w ms: " + time );
+    }
+
+    @Test
+    public void testMassWalkJob() {
+      Date time_now = null;
+      Date time_after = null;
+      long time = 0;
+      time_now = new Date();
+      for ( int i = 0; i < 20000; i++ ) {
+        job = new Cjob( (Cobject)body1, (Cobject)body2, EActionType.ActionWalk, 0 );
+      }
+      time_after = new Date();
+      time = time_after.getTime() - time_now.getTime();
+      assertTrue( time <= 350 );
+      System.out.println( "Przed: " + time_now.getTime() );
+      System.out.println( "Po: " + time_after.getTime() );
+      System.out.println( "CZAS w ms: " + time );
+    }
+
 }
